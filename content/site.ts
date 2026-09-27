@@ -64,4 +64,11 @@ export const experience = {
         "Conduzi a migração de Bubble para Xano sem downtime e sem reescrever tudo do zero.",
     },
   ],
+  milestones: [
+    { year: "Aos 16", text: "Aprendi a programar na escola pública." },
+    { year: "2021", text: "Desenvolvedor. Entrei para construir o primeiro produto da empresa." },
+    { year: "2023", text: "Tech Lead. Assumi a evolução técnica da plataforma." },
+  ],
+  closing: "Em todos esses sistemas, o código foi a parte mais fácil. O difícil foi entender o problema certo.",
+  cv: "Ver CV",
 };

@@ -8,6 +8,11 @@ import { DiagMigracao } from "./diagrams/diag-migracao";
 
 const DIAGRAMS = [DiagCobranca, DiagCredito, DiagIntegracoes, DiagIA, DiagMigracao];
 
+const MILESTONES = [
+  ...experience.milestones,
+  { year: status.currentMilestone.year, text: status.currentMilestone.text },
+];
+
 export function Experience() {
   return (
     <section id="experiencia" className="jb-experience">
@@ -45,6 +50,32 @@ export function Experience() {
             );
           })}
         </div>
+
+        <div className="jb-experience__trajectory">
+          <Reveal>
+            <h3 className="text-subtitle text-text">Trajetória</h3>
+          </Reveal>
+          <div className="jb-experience__timeline">
+            <div className="jb-experience__timeline-line" aria-hidden="true" />
+            {MILESTONES.map((milestone, index) => {
+              const current = index === MILESTONES.length - 1;
+              return (
+                <Reveal key={milestone.year} delay={index * 80} className="jb-experience__milestone">
+                  <span className="jb-experience__milestone-dot" data-current={current} aria-hidden="true" />
+                  <div className="jb-experience__milestone-year">{milestone.year}</div>
+                  <div className="jb-experience__milestone-text">{milestone.text}</div>
+                </Reveal>
+              );
+            })}
+          </div>
+        </div>
+
+        <Reveal className="jb-experience__closing">
+          <p className="text-closing text-text">{experience.closing}</p>
+          <a className="jb-btn2" href="/cv" target="_blank" rel="noopener noreferrer">
+            {experience.cv}
+          </a>
+        </Reveal>
       </div>
     </section>
   );
