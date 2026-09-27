@@ -87,6 +87,151 @@
   transform: translateY(0);
 }
 
+.jb-btn,
+.jb-btn2 {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  padding: 14px 28px;
+  font-size: var(--text-button);
+  font-weight: 600;
+  line-height: 1.25;
+  text-decoration: none;
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    transform 200ms ease;
+}
+
+.jb-btn {
+  border: 1px solid transparent;
+  background: var(--color-button);
+  color: #ffffff;
+}
+
+.jb-btn:hover {
+  background: var(--color-button-hover);
+}
+
+.jb-btn:active,
+.jb-btn2:active {
+  transform: scale(0.98);
+}
+
+.jb-btn2 {
+  border: 1px solid var(--color-text-3);
+  background: transparent;
+  color: var(--color-text);
+}
+
+.jb-btn2:hover {
+  border-color: var(--color-text);
+}
+
+.jb-link {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+
+.jb-link:hover {
+  text-decoration: underline;
+}
+
+.jb-link:active {
+  color: var(--color-text);
+}
+
+@keyframes jb-cursor-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.jb-cursor {
+  display: inline-block;
+  width: 4px;
+  height: 0.82em;
+  margin-right: -7px;
+  margin-left: 3px;
+  background: var(--color-accent);
+  vertical-align: -0.06em;
+  animation: jb-cursor-blink 1.05s steps(1) infinite;
+}
+
+.reveal {
+  will-change: opacity, transform;
+}
+
+.copy-email {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.copy-email__button {
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 9999px;
+  background: transparent;
+  color: var(--color-text-3);
+  cursor: pointer;
+  transition:
+    background-color 200ms ease,
+    color 200ms ease;
+}
+
+.copy-email__button:hover {
+  background: var(--color-surface);
+}
+
+.copy-email__button[data-copied="true"] {
+  color: var(--color-accent);
+}
+
+.copy-email__button svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.copy-email__feedback {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translate(-50%, 4px);
+  border-radius: 8px;
+  background: var(--color-surface);
+  padding: 4px 8px;
+  color: var(--color-text);
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  transition:
+    opacity 200ms ease,
+    transform 200ms ease;
+}
+
+.copy-email__feedback[data-copied="true"] {
+  transform: translate(-50%, 0);
+  opacity: 1;
+}
+
 @media (max-width: 767px) {
   :root {
     --text-display: 44px;
@@ -96,5 +241,46 @@
     --text-subtitle: 20px;
     --text-support: 17px;
     --text-body: 17px;
+  }
+
+  .jb-btn,
+  .jb-btn2 {
+    padding: 13px 24px;
+  }
+}
+
+@media (min-width: 768px) {
+  .jb-cursor {
+    width: 6px;
+    margin-right: -11px;
+    margin-left: 5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jb-btn,
+  .jb-btn2,
+  .jb-link,
+  .jb-cursor,
+  .reveal,
+  .copy-email__button,
+  .copy-email__feedback {
+    transition: none !important;
+  }
+
+  .jb-btn:active,
+  .jb-btn2:active {
+    transform: none;
+  }
+
+  .jb-cursor {
+    animation: none;
+    opacity: 1;
+  }
+
+  .reveal {
+    transform: none !important;
+    opacity: 1 !important;
+    will-change: auto;
   }
 }
