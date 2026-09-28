@@ -469,6 +469,214 @@ html.jb-js.jb-js-played .jb-hero__cta {
   margin-top: 28px;
 }
 
+.jb-textos {
+  padding-bottom: 80px;
+}
+
+.jb-textos__lead {
+  margin-top: 14px;
+}
+
+.jb-textos__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 36px;
+}
+
+.jb-textos__card-link {
+  display: block;
+  height: 100%;
+  border-radius: 24px;
+  background: var(--color-surface);
+  padding: 24px;
+  text-decoration: none;
+}
+
+.jb-textos__card-title {
+  display: block;
+  margin-top: 10px;
+}
+
+.jb-textos__card-summary {
+  display: block;
+  margin-top: 10px;
+}
+
+.jb-textos__appearance {
+  margin-top: 16px;
+}
+
+.jb-textos__appearance-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-radius: 24px;
+  border: 1px solid var(--color-surface);
+  padding: 20px 24px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.jb-textos__appearance-title {
+  display: block;
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+.jb-textos__arrow-icon {
+  flex-shrink: 0;
+  color: var(--color-text-3);
+}
+
+.jb-textos__cta {
+  margin-top: 32px;
+}
+
+.jb-textos-list {
+  padding: 56px 0 80px;
+}
+
+.jb-textos-list__lead {
+  margin-top: 14px;
+}
+
+.jb-textos-list__items {
+  max-width: 760px;
+  margin-top: 32px;
+}
+
+.jb-textos-list__item {
+  display: block;
+  border-top: 1px solid var(--color-surface);
+  padding: 24px 0;
+  text-decoration: none;
+}
+
+.jb-textos-list__item-title {
+  display: block;
+  margin-top: 6px;
+}
+
+.jb-textos-list__item-summary {
+  display: block;
+  margin-top: 8px;
+}
+
+.jb-textos-list__divider {
+  border-top: 1px solid var(--color-surface);
+}
+
+.jb-texto {
+  background: var(--color-surface);
+}
+
+.jb-texto__article {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 48px 20px 72px;
+}
+
+.jb-texto__title {
+  margin-top: 14px;
+}
+
+.jb-texto__meta {
+  margin-top: 14px;
+}
+
+.jb-prose {
+  margin-top: 36px;
+}
+
+.jb-prose p {
+  margin: 0 0 1.2em;
+  font-size: var(--text-body);
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+.jb-prose h2 {
+  margin: 1.6em 0 0.6em;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+
+.jb-prose blockquote {
+  margin: 1.4em 0;
+  border-left: 3px solid var(--color-accent);
+  padding-left: 18px;
+  font-size: var(--text-support);
+  line-height: 1.5;
+  color: var(--color-text-2);
+}
+
+.jb-prose ul,
+.jb-prose ol {
+  margin: 0 0 1.2em;
+  padding-left: 1.3em;
+  font-size: var(--text-body);
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+.jb-prose li + li {
+  margin-top: 0.4em;
+}
+
+.jb-prose code {
+  border-radius: 6px;
+  background: var(--color-bg);
+  padding: 2px 6px;
+  font-family: inherit;
+  font-size: 0.9em;
+  color: var(--color-text);
+}
+
+.jb-prose pre {
+  margin: 1.4em 0;
+  overflow-x: auto;
+  border-radius: 16px;
+  background: var(--color-bg);
+  padding: 20px;
+}
+
+.jb-prose pre code {
+  border-radius: 0;
+  background: none;
+  padding: 0;
+  font-size: 0.9em;
+  line-height: 1.5;
+  color: var(--color-text-2);
+}
+
+.jb-prose__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 1.6em 0;
+  border-radius: 16px;
+  background: var(--color-surface);
+}
+
+.jb-texto__invite {
+  margin-top: 40px;
+  border-radius: 24px;
+  background: var(--color-bg);
+  padding: 24px;
+}
+
+.jb-texto__invite-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
 @media (max-width: 767px) {
   :root {
     --text-display: 44px;
@@ -601,6 +809,57 @@ html.jb-js.jb-js-played .jb-hero__cta {
 
   .jb-experience__closing .jb-btn2 {
     margin-top: 36px;
+  }
+
+  .jb-textos {
+    padding-bottom: 140px;
+  }
+
+  .jb-textos__grid {
+    flex-direction: row;
+    gap: 24px;
+    margin-top: 56px;
+  }
+
+  .jb-textos__grid > * {
+    flex: 1;
+  }
+
+  .jb-textos__card-link {
+    padding: 28px;
+  }
+
+  .jb-textos__appearance-link {
+    padding: 24px 28px;
+  }
+
+  .jb-textos__cta {
+    margin-top: 40px;
+  }
+
+  .jb-textos-list {
+    padding: 96px 0 128px;
+  }
+
+  .jb-textos-list__items {
+    margin-top: 48px;
+  }
+
+  .jb-texto__article {
+    padding: 96px 0 120px;
+  }
+
+  .jb-prose {
+    margin-top: 48px;
+  }
+
+  .jb-prose h2 {
+    font-size: 26px;
+  }
+
+  .jb-texto__invite {
+    padding: 32px;
+    margin-top: 56px;
   }
 }
 
