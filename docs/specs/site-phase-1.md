@@ -112,18 +112,21 @@ Só escuro na fase 1. Preto puro na home. Space Gray como fundo de leitura na p�
 
 | Token | Hex | Uso |
 |---|---|---|
-| `bg` | #000000 | Fundo da home |
+| `bg` | #0A0A0A | Fundo da home (identidade "Construindo o Futuro", BAR-25) |
 | `surface` | #1D1D1F | Cards, fundo da página de texto, linhas divisórias |
-| `text` | #F5F5F7 | Títulos e corpo |
+| `text` | #F8FAFF | Títulos e corpo (BAR-25) |
 | `text-2` | #D2D2D7 | Linhas de apoio |
 | `text-3` | #86868B | Datas, legendas, metadados |
-| `accent` | #007AFF | Links, cursor, destaques, foco |
-| `button` | #0071E3 | Fundo do botão principal (texto branco) |
-| `button-hover` | #0077ED | Hover do botão principal |
+| `accent` | #007AFF | Links, cursor (traço), destaques, foco |
+| `accent-2` | #1A87FF | Link dentro da página do texto (fundo `surface`): `accent` some do contraste AA ali (4.19, mínimo 4.5); `accent-2` dá 4.77. Achado e aprovado na revisão final (BAR-18) |
+| `button` | #0071E3 | Fim do gradiente do botão principal (texto branco) |
+| `button-hover` | #0077ED | Documentado, sem uso: o hover do botão principal virou o brilho da seção 6.6.1 (BAR-25) |
+| `glow` | #00C2FF | Brilho do cursor e do horizonte animado (BAR-25) |
+| `glow-deep` | #0B3DFF | Início do gradiente do botão principal e do halo do horizonte (BAR-25) |
 
 Cores auxiliares (#34C759, #FFCC00, #FF3B30, #FF9500) ficam documentadas mas não são usadas na fase 1.
 
-Motivo do azul de botão: branco sobre #007AFF não passa no contraste AA em tamanho de botão. #0071E3 passa.
+Motivo do azul de botão: branco sobre #007AFF não passa no contraste AA em tamanho de botão. O gradiente (6.6.1) termina em #0071E3, que passa.
 
 ### 6.3 Tipografia
 
@@ -154,7 +157,7 @@ Coluna de leitura da página de texto: cerca de 680px (65 a 75 caracteres por li
 
 ### 6.5 Botões
 
-- **Principal:** fundo `button`, texto branco, padding 14px 28px (desktop) e 13px 24px (celular). Hover `button-hover`, clique com escala 0.98.
+- **Principal:** gradiente 135deg de `glow-deep` a `button`, texto branco, padding 14px 28px (desktop) e 13px 24px (celular). Borda interna e sombra com brilho (6.6.1, BAR-25); hover intensifica a sombra; clique com escala 0.98.
 - **Secundário:** sem fundo, borda 1px `text-3`, texto `text`. Hover com borda `text`.
 - **Link de texto:** cor `accent`, sublinhado no hover.
 - Foco visível em todos os elementos interativos: contorno 2px `accent`, afastamento de 3px.
@@ -166,10 +169,26 @@ Coluna de leitura da página de texto: cerca de 680px (65 a 75 caracteres por li
 - Números não contam. Sem parallax, sem seções fixas.
 - Rolagem suave ao clicar nas âncoras do menu.
 - Com `prefers-reduced-motion: reduce`, tudo aparece estático, sem digitação e com o cursor fixo.
+- **Excessão:** o horizonte animado do hero (6.6.1) roda continuamente, não uma única vez. Motivo, limites e controles de acessibilidade em `docs/decisions/002-animated-hero-background.md`.
+
+#### 6.6.1 Horizonte animado do hero (BAR-25)
+
+Fundo do hero, atrás do conteúdo, de baixo para cima:
+
+1. **Camada móvel** (`position: absolute; inset: -5%`) com um SVG contendo a imagem do horizonte (`public/images/horizon.jpg`, gerada de `assets/brand/horizon.png`, até 120KB) e um foco de luz que desliza por um arco (`animateMotion`, 18s, ida e volta) com um pulso de opacidade (6s). A camada toda tem uma deriva lenta só de `transform` (escala e translação, 16s, ida e volta).
+2. **Sombra** para a legibilidade: gradiente horizontal, mais escuro à esquerda (onde fica o texto) e mais claro à direita.
+3. **Conteúdo do hero**, sem mudança de texto, estrutura ou digitação.
+
+No celular, a imagem alinha à direita (`preserveAspectRatio="xMaxYMid slice"`) e o arco da luz usa um trecho diferente, para a luz não sair do quadro.
+
+**Controles obrigatórios**, documentados em `docs/decisions/002-animated-hero-background.md`:
+- Um botão discreto e visível pausa e retoma a animação (WCAG 2.2.2), nos dois sentidos, mesmo com `prefers-reduced-motion: reduce` ativo.
+- Com `prefers-reduced-motion: reduce`, a animação começa pausada e a luz fica parada na metade do percurso.
+- A animação pausa quando o hero sai da tela (`IntersectionObserver`).
 
 ### 6.7 Assinatura visual: o cursor
 
-Uma barra azul (`accent`) de 4px (celular) e 6px (desktop) de largura e 0.82em de altura, piscando a cada 1.05s com transição em degrau. Uso aprovado no hero. Uso em outros pontos (títulos de seção, favicon) está em teste: implementar só no hero e deixar um componente reutilizável.
+Uma barra em `glow` (#00C2FF, com brilho: `box-shadow` duplo) de 4px (celular) e 6px (desktop) de largura e 0.82em de altura, piscando a cada 1.05s com transição em degrau. Uso aprovado no hero. Uso em outros pontos (títulos de seção, favicon) está em teste: implementar só no hero e deixar um componente reutilizável.
 
 ---
 
@@ -206,7 +225,7 @@ Engenheiro de software. Transformo problemas de negócio em produtos.
 [Entrar em contato]  → #contato
 ```
 
-- Sem imagem de fundo, sem números, um botão só.
+- Fundo com o horizonte animado (6.6.1, BAR-25), sem números, um botão só.
 - Não ocupa 100% da tela: o título da Experiência precisa aparecer na borda inferior como sinal de que a página continua.
 - **Digitação do título:**
   - O texto completo existe no HTML desde o servidor (SEO e leitores de tela). O `h1` tem `aria-label` com o texto completo e as letras individuais ficam com `aria-hidden`.
@@ -398,9 +417,8 @@ Ordem obrigatória: primeiro no site, depois no Substack com o link "publicado o
 
 ## 12. Ícones
 
-- `app/icon.svg`: monograma "JB" em Inter Bold convertido em curvas, branco sobre preto.
-- `app/apple-icon.png` (180 x 180) com o mesmo desenho.
-- A versão com cursor azul fica para o teste do cursor.
+- `app/icon.png`: a esfera da identidade "Construindo o Futuro" (`assets/brand/sphere.png`), fundo transparente fora do círculo (BAR-25). Substitui o monograma "JB" da fase inicial.
+- `app/apple-icon.png` (180 x 180): a mesma esfera, fundo `#0A0A0A` (iOS não aceita transparência).
 
 ---
 
