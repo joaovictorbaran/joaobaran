@@ -3,18 +3,23 @@
 @theme {
   --font-sans: var(--font-inter), Inter, sans-serif;
 
-  --color-bg: #000000;
+  /* Identidade "Construindo o Futuro" (BAR-25, aprovada em 28/09/2026): fundo e texto
+     principal atualizados. Os demais tokens abaixo não mudam. */
+  --color-bg: #0a0a0a;
   --color-surface: #1d1d1f;
-  --color-text: #f5f5f7;
+  --color-text: #f8faff;
   --color-text-2: #d2d2d7;
   --color-text-3: #86868b;
   --color-accent: #007aff;
   --color-button: #0071e3;
   --color-button-hover: #0077ed;
   /* #007aff sobre --color-surface dá contraste 4.19 (abaixo do AA 4.5 para texto normal;
-     sobre --color-bg dá 5.23, passa). Usado só para link em contexto de fundo Space Gray
+     sobre --color-bg dá 4.93, passa). Usado só para link em contexto de fundo Space Gray
      (a página do texto), achado e aprovado na revisão final (BAR-18). */
   --color-accent-2: #1a87ff;
+  /* Brilho do cursor e do horizonte animado do hero (BAR-25). */
+  --color-glow: #00c2ff;
+  --color-glow-deep: #0b3dff;
 
   --text-display: 80px;
   --text-display--line-height: 1.05;
@@ -130,17 +135,25 @@
   transition:
     background-color 200ms ease,
     border-color 200ms ease,
+    box-shadow 200ms ease,
     transform 200ms ease;
 }
 
 .jb-btn {
   border: 1px solid transparent;
-  background: var(--color-button);
+  /* Gradiente termina em --color-button (#0071e3), não em --color-accent (#007aff), para
+     manter o contraste AA do texto branco (Spec + BAR-25). */
+  background: linear-gradient(135deg, var(--color-glow-deep), var(--color-button));
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 194, 255, 0.4),
+    0 8px 24px -8px rgba(0, 122, 255, 0.7);
   color: #ffffff;
 }
 
 .jb-btn:hover {
-  background: var(--color-button-hover);
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 194, 255, 0.55),
+    0 10px 28px -6px rgba(0, 122, 255, 0.85);
 }
 
 .jb-btn:active,
@@ -190,7 +203,10 @@
   height: 0.82em;
   margin-right: -7px;
   margin-left: 3px;
-  background: var(--color-accent);
+  background: var(--color-glow);
+  box-shadow:
+    0 0 10px rgba(0, 194, 255, 0.9),
+    0 0 22px rgba(0, 122, 255, 0.6);
   vertical-align: -0.06em;
   animation: jb-cursor-blink 1.05s steps(1) infinite;
 }
@@ -305,7 +321,75 @@
   color: var(--color-text);
 }
 
+.jb-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes jb-horizon-drift {
+  0% {
+    transform: scale(1.02) translate3d(0, 0, 0) rotate(0deg);
+  }
+
+  100% {
+    transform: scale(1.12) translate3d(-2.5%, -2%, 0) rotate(-1.5deg);
+  }
+}
+
+.jb-hero__horizon {
+  position: absolute;
+  inset: -5%;
+  transform-origin: 72% 58%;
+  animation: jb-horizon-drift 16s ease-in-out infinite alternate;
+}
+
+.jb-hero__horizon[data-paused="true"] {
+  animation-play-state: paused;
+}
+
+.jb-hero__horizon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.jb-hero__shadow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(10, 10, 10, 0.94) 0%, rgba(10, 10, 10, 0.55) 48%, rgba(10, 10, 10, 0.08) 100%);
+}
+
+.jb-hero__motion-toggle {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1;
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid var(--color-text-3);
+  background: rgba(10, 10, 10, 0.4);
+  color: var(--color-text);
+  transition:
+    border-color 200ms ease,
+    background-color 200ms ease;
+}
+
+.jb-hero__motion-toggle:hover {
+  border-color: var(--color-text);
+}
+
+.jb-hero__motion-toggle svg {
+  width: 16px;
+  height: 16px;
+}
+
 .jb-hero__inner {
+  position: relative;
+  z-index: 1;
   display: flex;
   min-height: calc(100vh - 52px - 72px);
   flex-direction: column;
@@ -1156,6 +1240,10 @@ html.jb-js.jb-js-played .jb-hero__cta {
   .jb-cursor {
     animation: none;
     opacity: 1;
+  }
+
+  .jb-hero__horizon {
+    animation: none;
   }
 
   .reveal {

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useReducedMotion } from "motion/react";
 import { Cursor } from "./cursor";
+import { HorizonLayer } from "./horizon-layer";
 import { hero } from "@/content/site";
 
 const TITLE = hero.title;
@@ -61,6 +62,7 @@ export function Hero() {
 
   return (
     <section className="jb-hero">
+      <HorizonLayer />
       <div className="jb-hero__inner jb-container">
         <h1 className="jb-hero__title text-display text-text" aria-label={TITLE}>
           <span aria-hidden="true">
