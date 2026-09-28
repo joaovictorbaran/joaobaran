@@ -73,6 +73,52 @@ export const experience = {
   cv: "Ver CV",
 };
 
+export const email = "contato@joaobaran.com";
+
+// URLs pendentes (GitHub e X): ver BAR-19. Enquanto forem "#", a linha não abre nova aba.
+// Ao chegar a URL, troque `href` e `handle` aqui; a linha em Canais se ajusta sozinha.
+export const channels = [
+  {
+    name: "LinkedIn",
+    description: "Trajetória e bastidores de carreira.",
+    handle: "in/joaovictorbaran",
+    href: "https://www.linkedin.com/in/joaovictorbaran",
+  },
+  {
+    name: "GitHub",
+    description: "Código e projetos.",
+    handle: "github.com",
+    href: "#",
+  },
+  {
+    name: "YouTube",
+    description: "Vídeos sobre tecnologia, produto e carreira.",
+    handle: "@joaobaran",
+    href: "https://www.youtube.com/@joaobaran",
+  },
+  {
+    name: "X",
+    description: "Construção em público.",
+    handle: "x.com",
+    href: "#",
+  },
+];
+
+export const canais = {
+  title: "Canais",
+};
+
+export const contact = {
+  title: "Vamos conversar.",
+  lead: "Quer falar sobre engenharia, produto ou uma oportunidade? Me manda um e-mail.",
+  photoAlt: "João Baran de camisa branca, com os braços cruzados",
+  linkedin: "Ou fale comigo no LinkedIn",
+};
+
+export const footer = {
+  cv: "CV",
+};
+
 export const textos = {
   title: "Textos",
   lead: "Sobre construir produtos, tecnologia e negócios.",
