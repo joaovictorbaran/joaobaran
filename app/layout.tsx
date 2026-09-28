@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
+import { seo, siteUrl } from "@/content/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -11,7 +12,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "João Baran",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: seo.homeTitle,
+    template: seo.titleTemplate,
+  },
+  description: seo.homeDescription,
 };
 
 // Roda antes da hidratação para marcar <html> sem piscar o título do hero:

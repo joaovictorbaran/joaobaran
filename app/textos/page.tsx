@@ -1,9 +1,16 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Menu } from "@/components/menu";
 import { Reveal } from "@/components/reveal";
 import { formatDate } from "@/lib/format-date";
 import { getPublishedPosts } from "@/lib/posts";
 import { textos } from "@/content/site";
+
+export const metadata: Metadata = {
+  title: textos.title,
+  description: textos.lead,
+  alternates: { canonical: "/textos" },
+};
 
 export default function TextosPage() {
   const posts = getPublishedPosts();
