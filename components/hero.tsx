@@ -65,8 +65,11 @@ export function Hero() {
         <h1 className="jb-hero__title text-display text-text" aria-label={TITLE}>
           <span aria-hidden="true">
             {chars.map((char, index) => (
-              <span key={index}>
-                {index === shown && !done ? <Cursor /> : null}
+              <span key={index} className="jb-hero__char">
+                {/* Posicionado como position:absolute (jb-cursor--roving) para não entrar no
+                    fluxo do texto: entrando/saindo a cada letra, ele perturbava exatamente onde
+                    o título quebra de linha e causava CLS (Spec §10, "CLS zero no hero"). */}
+                {index === shown && !done ? <Cursor className="jb-cursor--roving" /> : null}
                 <span className="jb-hero__letter" data-revealed={index < shown}>
                   {char}
                 </span>

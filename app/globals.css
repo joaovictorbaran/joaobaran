@@ -11,6 +11,10 @@
   --color-accent: #007aff;
   --color-button: #0071e3;
   --color-button-hover: #0077ed;
+  /* #007aff sobre --color-surface dá contraste 4.19 (abaixo do AA 4.5 para texto normal;
+     sobre --color-bg dá 5.23, passa). Usado só para link em contexto de fundo Space Gray
+     (a página do texto), achado e aprovado na revisão final (BAR-18). */
+  --color-accent-2: #1a87ff;
 
   --text-display: 80px;
   --text-display--line-height: 1.05;
@@ -189,6 +193,18 @@
   background: var(--color-accent);
   vertical-align: -0.06em;
   animation: jb-cursor-blink 1.05s steps(1) infinite;
+}
+
+.jb-hero__char {
+  position: relative;
+}
+
+.jb-cursor--roving {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin: 0;
+  transform: translateY(-50%);
 }
 
 .reveal {
@@ -737,6 +753,10 @@ html.jb-js.jb-js-played .jb-hero__cta {
 
 .jb-texto {
   background: var(--color-surface);
+}
+
+.jb-texto .jb-link {
+  color: var(--color-accent-2);
 }
 
 .jb-texto__article {
