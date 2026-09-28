@@ -1,6 +1,7 @@
 import { Menu } from "@/components/menu";
 import { Hero } from "@/components/hero";
 import { Experience } from "@/components/experience";
+import { Textos } from "@/components/textos";
 
 export default function HomePage() {
   return (
@@ -9,6 +10,7 @@ export default function HomePage() {
       <main id="main-content">
         <Hero />
         <Experience />
+        <Textos />
       </main>
     </>
   );

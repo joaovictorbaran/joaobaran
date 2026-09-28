@@ -1,9 +1,9 @@
 export const menu = {
   brand: "João Baran",
   links: [
-    { label: "Experiência", href: "#experiencia" },
-    { label: "Textos", href: "#textos" },
-    { label: "Contato", href: "#contato" },
+    { label: "Experiência", anchor: "experiencia" },
+    { label: "Textos", anchor: "textos", pageHref: "/textos" },
+    { label: "Contato", anchor: "contato" },
   ],
 };
 
@@ -71,4 +71,21 @@ export const experience = {
   ],
   closing: "Em todos esses sistemas, o código foi a parte mais fácil. O difícil foi entender o problema certo.",
   cv: "Ver CV",
+};
+
+export const textos = {
+  title: "Textos",
+  lead: "Sobre construir produtos, tecnologia e negócios.",
+  viewAll: "Ver todos os textos",
+  appearance: {
+    label: "Aparição",
+    title: "Podcast Sem Codar, conversa com Renato Asse",
+    // URL pendente: ver item da BAR-19 ("URL do episódio do podcast Sem Codar").
+    href: "#",
+  },
+  invite: {
+    title: "Quer continuar a conversa?",
+    cta: "Entrar em contato",
+    viewOthers: "Ver outros textos",
+  },
 };
