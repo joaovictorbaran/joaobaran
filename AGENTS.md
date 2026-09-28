@@ -21,12 +21,12 @@ A `main` é produção: o Vercel publica automaticamente a cada merge, e cada PR
 
 ## Sobre este projeto
 
-- **Stack:** <!-- TODO João: preencher (framework, gerenciador de pacotes, onde ficam os posts do blog) -->
-- **Comandos:** <!-- TODO João: preencher. Ex.: `npm run dev`, `npm run lint`, `npm run build` -->
-- **Conteúdo:** tudo em português (pt-BR). Seções previstas: Sobre (história), blog com os textos, hobbies/livros e redes.
+- **Stack:** Next.js (App Router) + TypeScript, Tailwind CSS v4, Motion para animações, Vitest para testes, pnpm.
+- **Comandos:** `pnpm dev`, `pnpm lint`, `pnpm typecheck`, `pnpm test`, `pnpm build`.
+- **Conteúdo:** tudo em português (pt-BR). Home (menu, hero, Experiência, Textos, Canais, Contato, rodapé), blog em `/textos` e `/textos/[slug]` (Markdown em `content/posts/*.md`, ver `docs/decisions/001-content-in-markdown.md`), página 404 e redirecionamento de `/cv`.
 - **Não publique nada sobre o piloto da Baran Obra** neste site, nem em textos, cases ou exemplos.
-- **Estilo visual:** sensação de site da Apple — muito espaço em branco, tipografia forte, poucos elementos. Inter como fonte principal, JetBrains Mono para conteúdo técnico ou numérico, paleta em tons de cinza e um único azul de destaque. Não adicione cores, sombras ou animações que não estejam no sistema existente.
-- **Textos do João:** não reescreva, resuma nem "melhore" textos autorais (posts, Sobre) a menos que a issue peça. Correções de digitação, sim; mudança de voz, não.
+- **Estilo visual:** sensação de site da Apple — muito espaço em branco, tipografia forte, poucos elementos. Inter como fonte única, paleta em tons de cinza e um azul de destaque (com variações de brilho na identidade "Construindo o Futuro", ver `docs/decisions/002-animated-hero-background.md`). Não adicione cores, sombras ou animações que não estejam no sistema existente.
+- **Textos do João:** não reescreva, resuma nem "melhore" textos autorais (posts) a menos que a issue peça. Correções de digitação, sim; mudança de voz, não.
 
 ## Como testar antes do PR
 

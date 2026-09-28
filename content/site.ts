@@ -84,8 +84,6 @@ export const seo = {
 
 export const email = "contato@joaobaran.com";
 
-// URLs pendentes (GitHub e X): ver BAR-19. Enquanto forem "#", a linha não abre nova aba.
-// Ao chegar a URL, troque `href` e `handle` aqui; a linha em Canais se ajusta sozinha.
 export const channels = [
   {
     name: "LinkedIn",

@@ -1,6 +1,8 @@
 # Especificação: joaobaran.com (fase 1)
 
-Documento de construção para o Claude Code. Todas as decisões abaixo já foram tomadas no planejamento. Quando algo não estiver descrito aqui, siga o protótipo completo `docs/specs/prototypes/site-full.jsx` (as dobras separadas na mesma pasta servem de detalhe) e, na dúvida, prefira a solução mais simples.
+Documento de construção para o Claude Code. Todas as decisões abaixo já foram tomadas no planejamento. Na dúvida, prefira a solução mais simples.
+
+O protótipo original (`docs/specs/prototypes/`, com `site-full.jsx` e as dobras separadas) guiou a construção da fase 1 e foi removido do repositório depois que o site já refletia o que estava nele (BAR-26). O site em produção é a referência visual atual.
 
 Fonte das decisões: página do Notion "Projeto: Site joaobaran.com".
 
@@ -194,7 +196,7 @@ Uma barra em `glow` (#00C2FF, com brilho: `box-shadow` duplo) de 4px (celular) e
 
 ## 7. Home: seções e textos finais
 
-Referência visual principal: `docs/specs/prototypes/site-full.jsx`, com todas as páginas e a navegação. As dobras separadas (`fold-1-hero.jsx`, `fold-2-experience.jsx`, `folds-3-5-posts-channels-contact.jsx`) e o esqueleto (`wireframe.jsx`) ficam como apoio. Os nomes dos componentes nos protótipos estão em português; no código, use os nomes em inglês da seção 5.
+O protótipo original tinha os componentes em português (ver nota da seção 1); no código, os nomes ficaram em inglês, conforme a seção 5.
 
 ### 7.0 Campos de status (content/site.ts)
 
