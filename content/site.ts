@@ -87,8 +87,8 @@ export const channels = [
   {
     name: "GitHub",
     description: "Código e projetos.",
-    handle: "github.com",
-    href: "#",
+    handle: "github.com/joaovictorbaran",
+    href: "https://github.com/joaovictorbaran",
   },
   {
     name: "YouTube",
@@ -99,8 +99,8 @@ export const channels = [
   {
     name: "X",
     description: "Construção em público.",
-    handle: "x.com",
-    href: "#",
+    handle: "@joaovbaran",
+    href: "https://x.com/joaovbaran",
   },
 ];
 
@@ -126,8 +126,7 @@ export const textos = {
   appearance: {
     label: "Aparição",
     title: "Podcast Sem Codar, conversa com Renato Asse",
-    // URL pendente: ver item da BAR-19 ("URL do episódio do podcast Sem Codar").
-    href: "#",
+    href: "https://youtube.com/playlist?list=PL25tm4Xi9g3ygCnQjSm0qCBgpSvl6RHSL",
   },
   invite: {
     title: "Quer continuar a conversa?",
