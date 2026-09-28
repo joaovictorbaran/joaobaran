@@ -1,4 +1,6 @@
-import { afterEach, describe, expect, it, vi } from "vitest";
+import fs from "node:fs";
+import path from "node:path";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import {
   getAllPosts,
   getFeaturedPosts,
@@ -9,6 +11,43 @@ import {
   selectFeatured,
   type Post,
 } from "./posts";
+
+// A leitura do sistema de arquivos é isolada (não depende do conteúdo real de
+// content/posts/, que muda conforme os textos publicados) para os testes abaixo
+// que exercitam getAllPosts/getPostBySlug/getPublishedPosts de ponta a ponta.
+vi.mock("node:fs", () => ({
+  default: {
+    readdirSync: vi.fn(),
+    readFileSync: vi.fn(),
+  },
+}));
+
+// Tipados como funções simples para não brigar com as sobrecargas do node:fs.
+const mockedReaddirSync = fs.readdirSync as unknown as ReturnType<typeof vi.fn<(dir: string) => string[]>>;
+const mockedReadFileSync = fs.readFileSync as unknown as ReturnType<typeof vi.fn<(path: string) => string>>;
+
+const FIXTURE_POSTS: Record<string, string> = {
+  "destaque.md": `---
+title: "Texto de exemplo"
+date: 2026-01-10
+summary: "Resumo do texto de exemplo."
+featured: true
+draft: false
+---
+
+Corpo do texto de exemplo.
+`,
+  "rascunho.md": `---
+title: "Texto rascunho"
+date: 2026-02-01
+summary: "Resumo do rascunho."
+featured: false
+draft: true
+---
+
+Corpo do rascunho.
+`,
+};
 
 function makePost(overrides: Partial<Post>): Post {
   return {
@@ -125,18 +164,31 @@ describe("selectFeatured", () => {
   });
 });
 
-describe("leitura dos textos em content/posts", () => {
-  afterEach(() => {
-    vi.unstubAllEnvs();
+describe("leitura dos textos (fs isolado)", () => {
+  beforeEach(() => {
+    mockedReaddirSync.mockReturnValue(Object.keys(FIXTURE_POSTS));
+    mockedReadFileSync.mockImplementation((filePath) => {
+      const fileName = path.basename(filePath);
+      const content = FIXTURE_POSTS[fileName];
+      if (content === undefined) {
+        throw new Error(`arquivo de teste não encontrado: ${fileName}`);
+      }
+      return content;
+    });
   });
 
-  it("lê os dois textos de exemplo do repositório", () => {
+  afterEach(() => {
+    vi.unstubAllEnvs();
+    vi.clearAllMocks();
+  });
+
+  it("lê os textos a partir do sistema de arquivos", () => {
     vi.stubEnv("NODE_ENV", "test");
     const posts = getAllPosts();
     const slugs = posts.map((post) => post.slug);
 
-    expect(slugs).toContain("texto-de-exemplo");
-    expect(slugs).toContain("texto-de-exemplo-com-imagem");
+    expect(slugs).toContain("destaque");
+    expect(slugs).toContain("rascunho");
   });
 
   it("ordena os textos do mais recente para o mais antigo", () => {
@@ -149,7 +201,7 @@ describe("leitura dos textos em content/posts", () => {
 
   it("busca um texto pelo slug", () => {
     vi.stubEnv("NODE_ENV", "test");
-    const post = getPostBySlug("texto-de-exemplo");
+    const post = getPostBySlug("destaque");
 
     expect(post?.title).toBe("Texto de exemplo");
   });
@@ -164,7 +216,7 @@ describe("leitura dos textos em content/posts", () => {
     const posts = getPublishedPosts();
 
     expect(posts.every((post) => !post.draft)).toBe(true);
-    expect(getPostBySlug("texto-de-exemplo")).toBeUndefined();
+    expect(getPostBySlug("rascunho")).toBeUndefined();
   });
 
   it("mantém os textos com draft: true fora da produção", () => {
