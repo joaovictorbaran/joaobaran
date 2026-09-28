@@ -719,6 +719,22 @@ html.jb-js.jb-js-played .jb-hero__cta {
   color: var(--color-text);
 }
 
+.jb-not-found {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.jb-not-found__lead {
+  margin-top: 14px;
+  max-width: 460px;
+}
+
+.jb-not-found__cta {
+  margin-top: 32px;
+}
+
 .jb-texto {
   background: var(--color-surface);
 }
@@ -1052,6 +1068,14 @@ html.jb-js.jb-js-played .jb-hero__cta {
 
   .jb-footer__inner {
     padding-block: 12px 16px;
+  }
+
+  .jb-not-found__lead {
+    margin-top: 20px;
+  }
+
+  .jb-not-found__cta {
+    margin-top: 40px;
   }
 
   .jb-texto__article {
