@@ -73,6 +73,15 @@ export const experience = {
   cv: "Ver CV",
 };
 
+export const siteUrl = "https://joaobaran.com";
+
+export const seo = {
+  titleTemplate: "%s | João Baran",
+  homeTitle: "João Baran | Engenheiro de software",
+  homeDescription:
+    "Engenheiro de software e CTO. Transformo problemas de negócio em produtos, do zero à produção, com experiência em fintech e IA aplicada.",
+};
+
 export const email = "contato@joaobaran.com";
 
 // URLs pendentes (GitHub e X): ver BAR-19. Enquanto forem "#", a linha não abre nova aba.

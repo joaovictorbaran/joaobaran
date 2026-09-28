@@ -1,17 +1,35 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import type { Components } from "react-markdown";
+import { JsonLd } from "@/components/json-ld";
 import { Menu } from "@/components/menu";
 import { formatDate } from "@/lib/format-date";
 import { getPostBySlug, getPublishedPosts } from "@/lib/posts";
+import { getArticleJsonLd } from "@/lib/structured-data";
 import { textos } from "@/content/site";
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
   return getPublishedPosts().map((post) => ({ slug: post.slug }));
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
+
+  if (!post) {
+    return {};
+  }
+
+  return {
+    title: post.title,
+    description: post.summary,
+    alternates: { canonical: `/textos/${post.slug}` },
+  };
 }
 
 function ProseImage({ src, alt }: { src?: string; alt?: string }) {
@@ -59,6 +77,7 @@ export default async function TextoPage({ params }: PageProps) {
 
   return (
     <>
+      <JsonLd data={getArticleJsonLd(post)} />
       <Menu />
       <main id="main-content" className="jb-texto">
         <article className="jb-texto__article">
