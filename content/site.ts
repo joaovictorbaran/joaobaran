@@ -20,7 +20,7 @@ export const status = {
     "Construí o sistema inteiro da Parcela Mais, fintech de saúde que ajuda clínicas de todo o Brasil a oferecer tratamento parcelado.",
   currentMilestone: {
     year: "2024",
-    text: "CTO. Lidero um time de 8 pessoas, com processos de desenvolvimento apoiados por IA.",
+    text: "CTO. Liderei um time de 8 pessoas, com processos de desenvolvimento apoiados por IA.",
   },
 };
 
@@ -79,7 +79,7 @@ export const seo = {
   titleTemplate: "%s | João Baran",
   homeTitle: "João Baran | Engenheiro de software",
   homeDescription:
-    "Engenheiro de software e CTO. Transformo problemas de negócio em produtos, do zero à produção, com experiência em fintech e IA aplicada.",
+    "Engenheiro de software, ex-CTO de uma fintech de saúde. Transformo problemas de negócio em produtos, do zero à produção, com experiência em fintech e IA aplicada.",
 };
 
 export const email = "contato@joaobaran.com";

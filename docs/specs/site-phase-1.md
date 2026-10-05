@@ -205,7 +205,7 @@ export const status = {
   role: "CTO",
   company: "Parcela Mais",
   currentLine: "Construí o sistema inteiro da Parcela Mais, fintech de saúde que ajuda clínicas de todo o Brasil a oferecer tratamento parcelado.",
-  currentMilestone: { year: "2024", text: "CTO. Lidero um time de 8 pessoas, com processos de desenvolvimento apoiados por IA." },
+  currentMilestone: { year: "2024", text: "CTO. Liderei um time de 8 pessoas, com processos de desenvolvimento apoiados por IA." },
 };
 ```
 
@@ -404,7 +404,7 @@ Ordem obrigatória: primeiro no site, depois no Substack com o link "publicado o
 
 ## 11. SEO e descoberta por IA
 
-- **Metadados:** modelo de título "%s | João Baran". Home: "João Baran | Engenheiro de software". Descrição da home: "Engenheiro de software e CTO. Transformo problemas de negócio em produtos, do zero à produção, com experiência em fintech e IA aplicada." Cada texto usa o próprio título e resumo.
+- **Metadados:** modelo de título "%s | João Baran". Home: "João Baran | Engenheiro de software". Descrição da home: "Engenheiro de software, ex-CTO de uma fintech de saúde. Transformo problemas de negócio em produtos, do zero à produção, com experiência em fintech e IA aplicada." Cada texto usa o próprio título e resumo.
 - **URL canônica** em todas as páginas, com domínio joaobaran.com.
 - **Imagem de compartilhamento** gerada com `next/og` (1200 x 630): fundo preto, "Construindo o futuro." com o cursor azul, "João Baran", "Engenheiro de software" e a foto. Nos textos, o mesmo modelo com o título do texto no lugar da frase.
 - **Dados estruturados (JSON-LD):** `Person` na home (nome, cargo, empresa atual vinda de `status`, URL, `sameAs` com os canais) e `Article` em cada texto (título, data, autor, imagem).
