@@ -204,7 +204,7 @@ O cargo atual fica num único lugar, para ser trocado de uma vez quando mudar:
 export const status = {
   role: "CTO",
   company: "Parcela Mais",
-  currentLine: "Sou CTO da Parcela Mais, uma fintech de saúde que ajuda clínicas de todo o Brasil a oferecer tratamentos parcelados aos pacientes.",
+  currentLine: "Construí o sistema inteiro da Parcela Mais, fintech de saúde que ajuda clínicas de todo o Brasil a oferecer tratamento parcelado.",
   currentMilestone: { year: "2024", text: "CTO. Lidero um time de 8 pessoas, com processos de desenvolvimento apoiados por IA." },
 };
 ```
