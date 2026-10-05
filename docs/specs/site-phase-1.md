@@ -322,7 +322,13 @@ Ou fale comigo no LinkedIn →
 
 ### 7.7 Rodapé
 
-Linha superior `surface`. E-mail (mailto), "CV" (→ `/cv`) e o ano atual (gerado automaticamente). Texto 14px em `text-3`, hover `text`. Sem ícones de redes.
+Linha superior `surface`. Três colunas (empilhadas no celular), texto 14px em `text-3`, hover `text` (BAR-73):
+
+1. **Marca:** "João Baran" e a linha de posicionamento do hero.
+2. **Navegação:** Experiência, Textos, Aparições, Contato (âncoras `/#...`) e CV (→ `/cv`).
+3. **Contato e redes** (links de texto curtos, sem ícones): e-mail (`mailto:`), WhatsApp (`wa.me`), LinkedIn, GitHub, YouTube e X. Externos em nova aba com `rel="noopener noreferrer"`.
+
+Linha inferior, separada por uma linha `surface`: "Também faço software sob medida na Baran Tecnologia" (link externo) e o ano atual, gerado automaticamente.
 
 ---
 
