@@ -77,7 +77,7 @@ export const siteUrl = "https://joaobaran.com";
 
 export const seo = {
   titleTemplate: "%s | João Baran",
-  homeTitle: "João Baran | Engenheiro de software",
+  homeTitle: "João Baran | Engenheiro de Software",
   homeDescription:
     "Engenheiro de software, ex-CTO de uma fintech de saúde. Transformo problemas de negócio em produtos, do zero à produção, com experiência em fintech e IA aplicada.",
 };
