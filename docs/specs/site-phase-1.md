@@ -305,20 +305,36 @@ Título "Canais". Lista com linhas divisórias; cada linha é um link inteiro (a
 
 Instagram entra quando o perfil for definido. Substack não aparece no site.
 
-### 7.6 Contato (`#contato`)
+### 7.6 Contato (`#contato`) e dobra azul (BAR-76)
 
-Seção final azul, centralizada (BAR-68 e BAR-72). Sem foto: a esfera do favicon, desenhada em CSS com os tokens do hero (`glow-deep`, `accent`, `glow`), fica atrás do texto como forma de fundo (45% de opacidade, estática, sem imagem). O fundo da seção é um degradê de `bg` para `glow-deep` a 22% (`color-mix`).
+Duas dobras, uma embaixo da outra, antes do rodapé.
+
+**Dobra com a foto, "quem sou eu" (`#contato`).** Fundo escuro padrão, sem azul e sem botão de ação. Foto à esquerda no desktop (5fr/7fr) e em cima no celular (cerca de 300px de altura), texto à direita.
 
 ```
-Chegou até aqui? Vamos conversar.|   (cursor azul piscando)
-Engenharia, produto ou uma oportunidade: me chama por onde for mais fácil.
-[Enviar e-mail]  [WhatsApp]  [LinkedIn]
+Prazer, João.
+Aprendi a programar na escola pública, fui de desenvolvedor a CTO de uma fintech de saúde e hoje faço software sob medida pela Baran Tecnologia.
+[Ver CV]  [LinkedIn]  [GitHub]
 contato@joaobaran.com  [ícone copiar]
 ```
 
-- **Enviar e-mail** (botão principal): `mailto:` com assunto "Contato pelo site". **WhatsApp**: `wa.me` do número comercial com mensagem pronta. **LinkedIn**: perfil. Externos abrem em nova aba com `rel="noopener noreferrer"`. Alvos de toque de pelo menos 48px de altura.
-- O e-mail aparece em texto pequeno, com um ícone de copiar ao lado (botão de 44px, `aria-label="Copiar e-mail"`). Ao copiar: o ícone vira um check azul e aparece um balão "Copiado" por 2 segundos, anunciado por uma região `role="status"`. Usar a API de área de transferência com alternativa para navegadores antigos.
-- Contraste do texto sobre a esfera: no mínimo 4,5:1 (a esfera é mais discreta que o texto).
+- Botões `jb-btn2` (só contorno), de 48px de altura, em nova aba com `rel="noopener noreferrer"`. **Sem** "Enviar e-mail" nem "WhatsApp" aqui.
+- O e-mail é um link `mailto:` com o ícone de copiar ao lado (botão de 44px, `aria-label="Copiar e-mail"`). Ao copiar: o ícone vira um check azul e aparece um balão "Copiado" por 2 segundos, anunciado por uma região `role="status"`. Usar a API de área de transferência com alternativa para navegadores antigos.
+- "Entrar em contato" (hero), "Contato" (menu) e "Contato" (rodapé) levam a esta dobra.
+
+**Dobra azul, a única chamada para ação.** Tela cheia (`100svh`), fundo `#0a0a0a` (o mesmo da dobra de cima, sem emenda), com a esfera do favicon centralizada. A esfera é o arquivo real `assets/brand/icon.png` (via `next/image`), ampliado a 119,5% dentro de um círculo recortado (`border-radius: 50%`, `overflow: hidden`), com a borda suavizada por `mask-image: radial-gradient(circle closest-side, #000 96%, transparent 100%)`. Não é desenhada em CSS e não usa `box-shadow`. Tamanho: 560px no desktop (cerca de 170px de respiro acima e abaixo numa dobra de 900px) e 260px no celular; nunca encosta nas bordas da dobra.
+
+Atrás da esfera, um halo azul: `radial-gradient(circle closest-side, rgba(40,90,255,.42) 0%, rgba(40,90,255,.42) 60%, rgba(40,90,255,.16) 76%, rgba(40,90,255,0) 100%)` num quadrado com diâmetro igual à altura da dobra (900px no desktop, 390px no celular), para o brilho esmaecer até transparente antes das bordas.
+
+```
+Chegou até aqui?
+Me manda uma
+mensagem.|          (cursor #8be9ff piscando)
+[Mandar mensagem]
+```
+
+- Texto branco, 40px no desktop e 21px no celular, em três linhas fixas, com `text-shadow` suave. O título fica no centro da esfera, em torno de ~64% do raio no desktop (e até ~70% no celular): o branco sobre a esfera passa de 4,5:1 até ~67% do raio (medido nos pixels do arquivo).
+- Botão único, branco com texto `glow-deep`, abrindo o WhatsApp comercial com a mensagem pronta (44px de altura no celular, 48px no desktop). É a **única** dobra com botão de WhatsApp.
 
 ### 7.7 Rodapé
 

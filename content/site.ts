@@ -120,16 +120,22 @@ export const canais = {
   title: "Canais",
 };
 
+// Dobra com a foto ("quem sou eu"): só links de informação, sem botões de ação.
 export const contact = {
-  title: "Chegou até aqui? Vamos conversar.",
-  lead: "Engenharia, produto ou uma oportunidade: me chama por onde for mais fácil.",
+  title: "Prazer, João.",
+  lead: "Aprendi a programar na escola pública, fui de desenvolvedor a CTO de uma fintech de saúde e hoje faço software sob medida pela Baran Tecnologia.",
   photoAlt: "João Baran de camisa branca, com os braços cruzados",
-  emailCta: "Enviar e-mail",
-  emailSubject: "Contato pelo site",
-  whatsappCta: "WhatsApp",
-  // Número comercial: (48) 93618-4688.
-  whatsappHref: "https://wa.me/5548936184688?text=Oi%20Jo%C3%A3o%2C%20vim%20pelo%20seu%20site.",
+  cvCta: "Ver CV",
+  cvHref: "/cv",
   linkedinCta: "LinkedIn",
+  githubCta: "GitHub",
+};
+
+// Dobra azul: a única chamada para ação do site (WhatsApp comercial: (48) 93618-4688).
+export const closing = {
+  lines: ["Chegou até aqui?", "Me manda uma", "mensagem."],
+  cta: "Mandar mensagem",
+  href: "https://wa.me/5548936184688?text=Oi%20Jo%C3%A3o%2C%20vim%20pelo%20seu%20site.",
 };
 
 export const footer = {
@@ -142,7 +148,7 @@ export const footer = {
     { label: "Contato", href: "/#contato" },
     { label: "CV", href: "/cv" },
   ],
-  // WhatsApp sem mensagem pronta (a mensagem fica no botão da seção de contato).
+  // WhatsApp sem mensagem pronta (a mensagem fica no botão da dobra azul).
   whatsappHref: "https://wa.me/5548936184688",
   baran: {
     text: "Também faço software sob medida na",

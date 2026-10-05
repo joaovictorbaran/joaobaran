@@ -6,6 +6,7 @@ import { Textos } from "@/components/textos";
 import { Aparicoes } from "@/components/aparicoes";
 import { Channels } from "@/components/channels";
 import { Contact } from "@/components/contact";
+import { Closing } from "@/components/closing";
 import { Footer } from "@/components/footer";
 import { JsonLd } from "@/components/json-ld";
 import { getPersonJsonLd } from "@/lib/structured-data";
@@ -26,6 +27,7 @@ export default function HomePage() {
         <Aparicoes />
         <Channels />
         <Contact />
+        <Closing />
       </main>
       <Footer />
     </>
