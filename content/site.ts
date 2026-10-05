@@ -133,7 +133,22 @@ export const contact = {
 };
 
 export const footer = {
-  cv: "CV",
+  navLabel: "Navegação do rodapé",
+  contactLabel: "Contato e redes",
+  nav: [
+    { label: "Experiência", href: "/#experiencia" },
+    { label: "Textos", href: "/#textos" },
+    { label: "Aparições", href: "/#aparicoes" },
+    { label: "Contato", href: "/#contato" },
+    { label: "CV", href: "/cv" },
+  ],
+  // WhatsApp sem mensagem pronta (a mensagem fica no botão da seção de contato).
+  whatsappHref: "https://wa.me/5548936184688",
+  baran: {
+    text: "Também faço software sob medida na",
+    link: "Baran Tecnologia",
+    href: "https://barantecnologia.com.br",
+  },
 };
 
 export type Aparicao = {
