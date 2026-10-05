@@ -236,8 +236,8 @@
 
 .copy-email__button {
   display: inline-flex;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   align-items: center;
   justify-content: center;
   border: 0;
@@ -764,32 +764,23 @@ html.jb-js.jb-js-played .jb-hero__cta {
   margin-top: 14px;
 }
 
-.jb-contact__email {
+.jb-contact__actions {
   display: flex;
-  align-items: center;
-  gap: 6px;
+  flex-wrap: wrap;
+  gap: 12px;
   margin-top: 28px;
 }
 
-.jb-contact__email-link {
-  color: var(--color-text);
-  font-size: 20px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: color 200ms ease;
+.jb-contact__actions .jb-btn,
+.jb-contact__actions .jb-btn2 {
+  min-height: 48px;
 }
 
-.jb-contact__email-link:hover {
-  color: var(--color-accent);
-}
-
-.jb-contact__linkedin {
-  display: inline-flex;
-  min-height: 40px;
+.jb-contact__email {
+  display: flex;
   align-items: center;
-  gap: 8px;
-  margin-top: 8px;
-  font-size: 17px;
+  gap: 4px;
+  margin-top: 20px;
 }
 
 .jb-footer {
@@ -1178,16 +1169,8 @@ html.jb-js.jb-js-played .jb-hero__cta {
     max-height: none;
   }
 
-  .jb-contact__email {
+  .jb-contact__actions {
     margin-top: 36px;
-  }
-
-  .jb-contact__email-link {
-    font-size: 24px;
-  }
-
-  .jb-contact__linkedin {
-    margin-top: 12px;
   }
 
   .jb-footer__inner {
@@ -1242,7 +1225,6 @@ html.jb-js.jb-js-played .jb-hero__cta {
   .copy-email__feedback,
   .jb-channels__meta,
   .jb-channels__arrow,
-  .jb-contact__email-link,
   .jb-footer__link {
     transition: none !important;
   }

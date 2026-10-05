@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { channels, contact, email } from "@/content/site";
 import photo from "@/public/images/joao-baran-contact.jpg";
-import { ArrowIcon } from "./arrow-icon";
 import { CopyEmail } from "./copy-email";
 import { Reveal } from "./reveal";
 
@@ -25,24 +24,24 @@ export function Contact() {
           <h2 className="text-section text-text">{contact.title}</h2>
           <p className="jb-contact__lead text-body text-text-2">{contact.lead}</p>
 
-          <div className="jb-contact__email">
-            <a className="jb-contact__email-link" href={`mailto:${email}`}>
-              {email}
+          <div className="jb-contact__actions">
+            <a className="jb-btn" href={`mailto:${email}?subject=${encodeURIComponent(contact.emailSubject)}`}>
+              {contact.emailCta}
             </a>
-            <CopyEmail email={email} />
+            <a className="jb-btn2" href={contact.whatsappHref} target="_blank" rel="noopener noreferrer">
+              {contact.whatsappCta}
+            </a>
+            {linkedin ? (
+              <a className="jb-btn2" href={linkedin.href} target="_blank" rel="noopener noreferrer">
+                {contact.linkedinCta}
+              </a>
+            ) : null}
           </div>
 
-          {linkedin ? (
-            <a
-              className="jb-link jb-contact__linkedin"
-              href={linkedin.href}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {contact.linkedin}
-              <ArrowIcon />
-            </a>
-          ) : null}
+          <div className="jb-contact__email">
+            <span className="jb-contact__email-text text-small text-text-2">{email}</span>
+            <CopyEmail email={email} />
+          </div>
         </Reveal>
       </div>
     </section>
