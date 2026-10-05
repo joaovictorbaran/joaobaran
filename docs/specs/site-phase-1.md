@@ -170,7 +170,6 @@ Coluna de leitura da página de texto: cerca de 680px (65 a 75 caracteres por li
 - Hover de botões, cards e links: 200ms.
 - Números não contam. Sem parallax, sem seções fixas.
 - Rolagem suave ao clicar nas âncoras do menu.
-- Com `prefers-reduced-motion: reduce`, tudo aparece estático, sem digitação e com o cursor fixo.
 - **Excessão:** o horizonte animado do hero (6.6.1) roda continuamente, não uma única vez. Motivo, limites e controles de acessibilidade em `docs/decisions/002-animated-hero-background.md`.
 
 #### 6.6.1 Horizonte animado do hero (BAR-25)
@@ -183,9 +182,8 @@ Fundo do hero, atrás do conteúdo, de baixo para cima:
 
 No celular, a imagem alinha à direita (`preserveAspectRatio="xMaxYMid slice"`) e o arco da luz usa um trecho diferente, para a luz não sair do quadro.
 
-**Controles obrigatórios**, documentados em `docs/decisions/002-animated-hero-background.md`:
-- Um botão discreto e visível pausa e retoma a animação (WCAG 2.2.2), nos dois sentidos, mesmo com `prefers-reduced-motion: reduce` ativo.
-- Com `prefers-reduced-motion: reduce`, a animação começa pausada e a luz fica parada na metade do percurso.
+**Controles**, documentados em `docs/decisions/002-animated-hero-background.md`:
+- Sem botão de pausa e sem tratamento de `prefers-reduced-motion`: a animação roda igual para todos (BAR-66).
 - A animação pausa quando o hero sai da tela (`IntersectionObserver`).
 
 ### 6.7 Assinatura visual: o cursor
@@ -398,7 +396,7 @@ Ordem obrigatória: primeiro no site, depois no Substack com o link "publicado o
 - Um único `h1` por página; hierarquia de títulos correta.
 - Link "Pular para o conteúdo" visível no foco.
 - Navegação completa por teclado com foco visível.
-- `prefers-reduced-motion` respeitado em tudo (seção 6.6).
+- Animações das demais seções respeitam `prefers-reduced-motion` (seção 6.6); o hero é exceção (BAR-66).
 - Alvos de toque de pelo menos 40px.
 - Metas de Lighthouse no celular: 95 ou mais em Performance, Acessibilidade, Boas práticas e SEO. Deslocamento de layout (CLS) zero no hero.
 

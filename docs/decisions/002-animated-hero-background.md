@@ -21,12 +21,11 @@ Justamente por ser contínua (e não uma reação a uma ação da pessoa), essa 
 
 1. **Só `transform` e `opacity`.** Nada de desfoque, cor ou tamanho de fonte, para o custo de repintura ficar previsível mesmo rodando o tempo todo.
 2. **Camadas com `aria-hidden="true"`.** É decoração; o conteúdo real do hero (título, linha de apoio, botão) não muda.
-3. **Controle de pausa visível (WCAG 2.2.2).** Um botão no canto do hero pausa e retoma a animação, nos dois sentidos. Isso é exigência formal: a WCAG 2.2.2 pede um jeito de pausar qualquer movimento automático que dure mais de 5 segundos, e aqui não há um fim natural.
-4. **`prefers-reduced-motion: reduce` como padrão inicial, não como bloqueio.** Quem pede movimento reduzido no sistema vê a animação já pausada, com a luz parada na metade do percurso (`SVGSVGElement.pauseAnimations()` + `setCurrentTime()` para a parte com SMIL; `animation-play-state` para a deriva em CSS). Mas o botão continua funcionando: se a pessoa quiser ver a animação mesmo assim, um clique resolve. A preferência do sistema é o padrão, não uma trava.
-5. **Pausa fora de tela.** Um `IntersectionObserver` pausa a animação quando o hero sai da tela, por desempenho, sem alterar o que o botão mostra (ele reflete a intenção da pessoa, não se o hero está visível).
+3. **Sem controle de pausa e sem tratamento de `prefers-reduced-motion`.** Decisão do João (BAR-66): a animação roda igual para todos, sem botão e sem versão estática. Isso deixa de atender à WCAG 2.2.2 (pausar movimento automático) e à preferência de movimento reduzido do sistema; foi uma escolha consciente de produto.
+4. **Pausa fora de tela.** Um `IntersectionObserver` pausa a animação quando o hero sai da tela, por desempenho.
 
 ## Consequências
 
 - O Lighthouse mobile precisa continuar em 95 ou mais nas quatro categorias e CLS zero no hero com essa camada ativa (conferido na BAR-25). Qualquer regressão de performance encontrada depois entra como issue própria, sem reabrir esta decisão.
-- Qualquer teste futuro de animação contínua em outro lugar do site (por exemplo, no cursor fora do hero, mencionado como "em teste" na Spec §6.7) deve vir com os mesmos cinco controles, não só copiar a implementação.
+- Qualquer teste futuro de animação contínua em outro lugar do site (por exemplo, no cursor fora do hero, mencionado como "em teste" na Spec §6.7) deve vir com os mesmos controles acima, não só copiar a implementação.
 - Se a imagem de origem do horizonte (`assets/brand/horizon.png`) for recortada ou trocada, o arco da luz (`docs/specs/site-phase-1.md` §6.6.1) precisa ser medido de novo: ele foi calculado para a imagem atual.

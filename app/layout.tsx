@@ -25,8 +25,6 @@ export const metadata: Metadata = {
 const HERO_TYPING_INIT_SCRIPT = `
 (function () {
   try {
-    var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduced) return;
     document.documentElement.classList.add("jb-js");
     if (sessionStorage.getItem("jb-hero-typed") === "1") {
       document.documentElement.classList.add("jb-js-played");

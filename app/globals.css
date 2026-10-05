@@ -359,34 +359,6 @@
   background: linear-gradient(90deg, rgba(10, 10, 10, 0.94) 0%, rgba(10, 10, 10, 0.55) 48%, rgba(10, 10, 10, 0.08) 100%);
 }
 
-.jb-hero__motion-toggle {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-  z-index: 1;
-  display: inline-flex;
-  width: 40px;
-  height: 40px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 9999px;
-  border: 1px solid var(--color-text-3);
-  background: rgba(10, 10, 10, 0.4);
-  color: var(--color-text);
-  transition:
-    border-color 200ms ease,
-    background-color 200ms ease;
-}
-
-.jb-hero__motion-toggle:hover {
-  border-color: var(--color-text);
-}
-
-.jb-hero__motion-toggle svg {
-  width: 16px;
-  height: 16px;
-}
-
 .jb-hero__inner {
   position: relative;
   z-index: 1;
@@ -1217,7 +1189,6 @@ html.jb-js.jb-js-played .jb-hero__cta {
   .jb-btn,
   .jb-btn2,
   .jb-link,
-  .jb-cursor,
   .reveal,
   .copy-email__button,
   .copy-email__feedback,
@@ -1235,15 +1206,6 @@ html.jb-js.jb-js-played .jb-hero__cta {
   .jb-btn:active,
   .jb-btn2:active {
     transform: none;
-  }
-
-  .jb-cursor {
-    animation: none;
-    opacity: 1;
-  }
-
-  .jb-hero__horizon {
-    animation: none;
   }
 
   .reveal {
