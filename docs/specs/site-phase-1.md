@@ -279,7 +279,7 @@ De desenvolvedor a CTO na mesma empresa.
 
 **Fechamento**
 ```
-Em todos esses sistemas, o código foi a parte mais fácil. O difícil foi entender o problema certo.
+Meu trabalho é achar o problema que vale resolver e colocar a solução no ar.
 [Ver CV]  → /cv (botão secundário, abre em nova aba)
 ```
 

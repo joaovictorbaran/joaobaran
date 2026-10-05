@@ -69,7 +69,7 @@ export const experience = {
     { year: "2021", text: "Desenvolvedor. Entrei para construir o primeiro produto da empresa." },
     { year: "2023", text: "Tech Lead. Assumi a evolução técnica da plataforma." },
   ],
-  closing: "Em todos esses sistemas, o código foi a parte mais fácil. O difícil foi entender o problema certo.",
+  closing: "Meu trabalho é achar o problema que vale resolver e colocar a solução no ar.",
   cv: "Ver CV",
 };
 
