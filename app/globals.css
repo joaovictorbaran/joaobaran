@@ -322,6 +322,9 @@
 }
 
 .jb-hero {
+  /* Menu (altura + 1px de borda) + hero ocupam exatamente a primeira dobra. */
+  --menu-height: 53px;
+
   position: relative;
   overflow: hidden;
 }
@@ -363,7 +366,8 @@
   position: relative;
   z-index: 1;
   display: flex;
-  min-height: calc(100vh - 52px - 72px);
+  min-height: calc(100vh - var(--menu-height));
+  min-height: calc(100svh - var(--menu-height));
   flex-direction: column;
   justify-content: center;
 }
@@ -991,8 +995,8 @@ html.jb-js.jb-js-played .jb-hero__cta {
     gap: 32px;
   }
 
-  .jb-hero__inner {
-    min-height: calc(100vh - 60px - 64px);
+  .jb-hero {
+    --menu-height: 61px;
   }
 
   .jb-hero__title {
