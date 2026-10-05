@@ -17,20 +17,24 @@ export const status = {
   role: "CTO",
   company: "Parcela Mais",
   currentLine:
-    "Sou CTO da Parcela Mais, uma fintech de saúde que ajuda clínicas de todo o Brasil a oferecer tratamentos parcelados aos pacientes.",
+    "Construí o sistema inteiro da Parcela Mais, fintech de saúde que ajuda clínicas de todo o Brasil a oferecer tratamento parcelado.",
   currentMilestone: {
     year: "2024",
-    text: "CTO. Lidero um time de 8 pessoas, com processos de desenvolvimento apoiados por IA.",
+    text: "CTO. Liderei um time de 8 pessoas, com processos de desenvolvimento apoiados por IA.",
   },
 };
 
 export const experience = {
   title: "De desenvolvedor a CTO na mesma empresa.",
+  impactLabel: "Parcela Mais em números",
   impact: [
     { value: "7 mil", label: "clínicas atendidas" },
     { value: "R$100 milhões", label: "transacionados" },
     { value: "40 mil", label: "pessoas com acesso ampliado a tratamentos" },
   ],
+  blocksTitle: "O que construí",
+  blocksIntro:
+    "Do problema de negócio ao sistema em produção, cinco frentes em que fui responsável pela solução.",
   blocks: [
     {
       title: "Plataforma de cobrança",
@@ -64,12 +68,13 @@ export const experience = {
         "Conduzi a migração de Bubble para Xano sem downtime e sem reescrever tudo do zero.",
     },
   ],
+  trajectoryTitle: "Trajetória",
   milestones: [
     { year: "Aos 16", text: "Aprendi a programar na escola pública." },
     { year: "2021", text: "Desenvolvedor. Entrei para construir o primeiro produto da empresa." },
     { year: "2023", text: "Tech Lead. Assumi a evolução técnica da plataforma." },
   ],
-  closing: "Em todos esses sistemas, o código foi a parte mais fácil. O difícil foi entender o problema certo.",
+  closing: "Meu trabalho é achar o problema que vale resolver e colocar a solução no ar.",
   cv: "Ver CV",
 };
 
@@ -77,9 +82,9 @@ export const siteUrl = "https://joaobaran.com";
 
 export const seo = {
   titleTemplate: "%s | João Baran",
-  homeTitle: "João Baran | Engenheiro de software",
+  homeTitle: "João Baran | Engenheiro de Software",
   homeDescription:
-    "Engenheiro de software e CTO. Transformo problemas de negócio em produtos, do zero à produção, com experiência em fintech e IA aplicada.",
+    "Engenheiro de software, ex-CTO de uma fintech de saúde. Transformo problemas de negócio em produtos, do zero à produção, com experiência em fintech e IA aplicada.",
 };
 
 export const email = "contato@joaobaran.com";
@@ -116,10 +121,15 @@ export const canais = {
 };
 
 export const contact = {
-  title: "Vamos conversar.",
-  lead: "Quer falar sobre engenharia, produto ou uma oportunidade? Me manda um e-mail.",
+  title: "Chegou até aqui? Vamos conversar.",
+  lead: "Engenharia, produto ou uma oportunidade: me chama por onde for mais fácil.",
   photoAlt: "João Baran de camisa branca, com os braços cruzados",
-  linkedin: "Ou fale comigo no LinkedIn",
+  emailCta: "Enviar e-mail",
+  emailSubject: "Contato pelo site",
+  whatsappCta: "WhatsApp",
+  // Número comercial: (48) 93618-4688.
+  whatsappHref: "https://wa.me/5548936184688?text=Oi%20Jo%C3%A3o%2C%20vim%20pelo%20seu%20site.",
+  linkedinCta: "LinkedIn",
 };
 
 export const footer = {

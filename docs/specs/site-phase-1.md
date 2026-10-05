@@ -204,8 +204,8 @@ O cargo atual fica num único lugar, para ser trocado de uma vez quando mudar:
 export const status = {
   role: "CTO",
   company: "Parcela Mais",
-  currentLine: "Sou CTO da Parcela Mais, uma fintech de saúde que ajuda clínicas de todo o Brasil a oferecer tratamentos parcelados aos pacientes.",
-  currentMilestone: { year: "2024", text: "CTO. Lidero um time de 8 pessoas, com processos de desenvolvimento apoiados por IA." },
+  currentLine: "Construí o sistema inteiro da Parcela Mais, fintech de saúde que ajuda clínicas de todo o Brasil a oferecer tratamento parcelado.",
+  currentMilestone: { year: "2024", text: "CTO. Liderei um time de 8 pessoas, com processos de desenvolvimento apoiados por IA." },
 };
 ```
 
@@ -277,7 +277,7 @@ De desenvolvedor a CTO na mesma empresa.
 
 **Fechamento**
 ```
-Em todos esses sistemas, o código foi a parte mais fácil. O difícil foi entender o problema certo.
+Meu trabalho é achar o problema que vale resolver e colocar a solução no ar.
 [Ver CV]  → /cv (botão secundário, abre em nova aba)
 ```
 
@@ -307,18 +307,18 @@ Instagram entra quando o perfil for definido. Substack não aparece no site.
 
 ### 7.6 Contato (`#contato`)
 
-- Foto `public/images/joao-baran-contact.jpg` (4:5, 1200 x 1500, já preparada), com `next/image`, raio 24px, `placeholder="blur"`. Texto alternativo: "João Baran de camisa branca, com os braços cruzados". Foto à esquerda no desktop (420px), acima do texto no celular.
+Seção final azul, centralizada (BAR-68 e BAR-72). Sem foto: a esfera do favicon, desenhada em CSS com os tokens do hero (`glow-deep`, `accent`, `glow`), fica atrás do texto como forma de fundo (45% de opacidade, estática, sem imagem). O fundo da seção é um degradê de `bg` para `glow-deep` a 22% (`color-mix`).
 
 ```
-Vamos conversar.
-Quer falar sobre engenharia, produto ou uma oportunidade? Me manda um e-mail.
+Chegou até aqui? Vamos conversar.|   (cursor azul piscando)
+Engenharia, produto ou uma oportunidade: me chama por onde for mais fácil.
+[Enviar e-mail]  [WhatsApp]  [LinkedIn]
 contato@joaobaran.com  [ícone copiar]
-Ou fale comigo no LinkedIn →
 ```
 
-- O e-mail é um link `mailto:` (24px desktop e 20px celular, peso 600, hover `accent`).
-- Ao lado, só um ícone de copiar (botão de 40px, sem texto visível, `aria-label="Copiar e-mail"`). Ao copiar: o ícone vira um check azul e aparece um balão "Copiado" por 2 segundos, anunciado por uma região `role="status"`. Usar a API de área de transferência com alternativa para navegadores antigos.
-- "Ou fale comigo no LinkedIn" é link de texto azul.
+- **Enviar e-mail** (botão principal): `mailto:` com assunto "Contato pelo site". **WhatsApp**: `wa.me` do número comercial com mensagem pronta. **LinkedIn**: perfil. Externos abrem em nova aba com `rel="noopener noreferrer"`. Alvos de toque de pelo menos 48px de altura.
+- O e-mail aparece em texto pequeno, com um ícone de copiar ao lado (botão de 44px, `aria-label="Copiar e-mail"`). Ao copiar: o ícone vira um check azul e aparece um balão "Copiado" por 2 segundos, anunciado por uma região `role="status"`. Usar a API de área de transferência com alternativa para navegadores antigos.
+- Contraste do texto sobre a esfera: no mínimo 4,5:1 (a esfera é mais discreta que o texto).
 
 ### 7.7 Rodapé
 
@@ -410,7 +410,7 @@ Ordem obrigatória: primeiro no site, depois no Substack com o link "publicado o
 
 ## 11. SEO e descoberta por IA
 
-- **Metadados:** modelo de título "%s | João Baran". Home: "João Baran | Engenheiro de software". Descrição da home: "Engenheiro de software e CTO. Transformo problemas de negócio em produtos, do zero à produção, com experiência em fintech e IA aplicada." Cada texto usa o próprio título e resumo.
+- **Metadados:** modelo de título "%s | João Baran". Home: "João Baran | Engenheiro de Software". Descrição da home: "Engenheiro de software e CTO. Transformo problemas de negócio em produtos, do zero à produção, com experiência em fintech e IA aplicada." Cada texto usa o próprio título e resumo.
 - **URL canônica** em todas as páginas, com domínio joaobaran.com.
 - **Imagem de compartilhamento** gerada com `next/og` (1200 x 630): fundo preto, "Construindo o futuro." com o cursor azul, "João Baran", "Engenheiro de software" e a foto. Nos textos, o mesmo modelo com o título do texto no lugar da frase.
 - **Dados estruturados (JSON-LD):** `Person` na home (nome, cargo, empresa atual vinda de `status`, URL, `sameAs` com os canais) e `Article` em cada texto (título, data, autor, imagem).

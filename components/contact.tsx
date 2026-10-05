@@ -1,7 +1,5 @@
-import Image from "next/image";
 import { channels, contact, email } from "@/content/site";
-import photo from "@/public/images/joao-baran-contact.jpg";
-import { ArrowIcon } from "./arrow-icon";
+import { Cursor } from "./cursor";
 import { CopyEmail } from "./copy-email";
 import { Reveal } from "./reveal";
 
@@ -10,39 +8,33 @@ const linkedin = channels.find((channel) => channel.name === "LinkedIn");
 export function Contact() {
   return (
     <section id="contato" className="jb-contact">
-      <div className="jb-container jb-contact__inner">
-        <Reveal className="jb-contact__photo">
-          <Image
-            src={photo}
-            alt={contact.photoAlt}
-            placeholder="blur"
-            sizes="(min-width: 1024px) 420px, (min-width: 768px) 40vw, 100vw"
-            className="jb-contact__image"
-          />
-        </Reveal>
-
-        <Reveal delay={120} className="jb-contact__copy">
-          <h2 className="text-section text-text">{contact.title}</h2>
+      <div className="jb-contact__sphere" aria-hidden="true" />
+      <div className="jb-container">
+        <Reveal>
+          <h2 className="text-section text-text">
+            {contact.title}
+            <Cursor />
+          </h2>
           <p className="jb-contact__lead text-body text-text-2">{contact.lead}</p>
 
-          <div className="jb-contact__email">
-            <a className="jb-contact__email-link" href={`mailto:${email}`}>
-              {email}
+          <div className="jb-contact__actions">
+            <a className="jb-btn" href={`mailto:${email}?subject=${encodeURIComponent(contact.emailSubject)}`}>
+              {contact.emailCta}
             </a>
-            <CopyEmail email={email} />
+            <a className="jb-btn2" href={contact.whatsappHref} target="_blank" rel="noopener noreferrer">
+              {contact.whatsappCta}
+            </a>
+            {linkedin ? (
+              <a className="jb-btn2" href={linkedin.href} target="_blank" rel="noopener noreferrer">
+                {contact.linkedinCta}
+              </a>
+            ) : null}
           </div>
 
-          {linkedin ? (
-            <a
-              className="jb-link jb-contact__linkedin"
-              href={linkedin.href}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {contact.linkedin}
-              <ArrowIcon />
-            </a>
-          ) : null}
+          <div className="jb-contact__email">
+            <span className="jb-contact__email-text text-small text-text-2">{email}</span>
+            <CopyEmail email={email} />
+          </div>
         </Reveal>
       </div>
     </section>
