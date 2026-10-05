@@ -1,6 +1,5 @@
-import Image from "next/image";
 import { channels, contact, email } from "@/content/site";
-import photo from "@/public/images/joao-baran-contact.jpg";
+import { Cursor } from "./cursor";
 import { CopyEmail } from "./copy-email";
 import { Reveal } from "./reveal";
 
@@ -9,19 +8,13 @@ const linkedin = channels.find((channel) => channel.name === "LinkedIn");
 export function Contact() {
   return (
     <section id="contato" className="jb-contact">
-      <div className="jb-container jb-contact__inner">
-        <Reveal className="jb-contact__photo">
-          <Image
-            src={photo}
-            alt={contact.photoAlt}
-            placeholder="blur"
-            sizes="(min-width: 1024px) 420px, (min-width: 768px) 40vw, 100vw"
-            className="jb-contact__image"
-          />
-        </Reveal>
-
-        <Reveal delay={120} className="jb-contact__copy">
-          <h2 className="text-section text-text">{contact.title}</h2>
+      <div className="jb-contact__sphere" aria-hidden="true" />
+      <div className="jb-container">
+        <Reveal>
+          <h2 className="text-section text-text">
+            {contact.title}
+            <Cursor />
+          </h2>
           <p className="jb-contact__lead text-body text-text-2">{contact.lead}</p>
 
           <div className="jb-contact__actions">
