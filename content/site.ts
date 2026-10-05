@@ -17,7 +17,7 @@ export const status = {
   role: "CTO",
   company: "Parcela Mais",
   currentLine:
-    "Construí o sistema inteiro da Parcela Mais, fintech de saúde que ajuda clínicas de todo o Brasil a oferecer tratamento parcelado.",
+    "Construí o sistema da Parcela Mais, fintech de saúde que ajuda clínicas de todo o Brasil a oferecer tratamento parcelado.",
   currentMilestone: {
     year: "2024",
     text: "CTO. Liderei um time de 8 pessoas, com processos de desenvolvimento apoiados por IA.",
