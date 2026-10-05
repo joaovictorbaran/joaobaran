@@ -26,11 +26,15 @@ export const status = {
 
 export const experience = {
   title: "De desenvolvedor a CTO na mesma empresa.",
+  impactLabel: "Parcela Mais em números",
   impact: [
     { value: "7 mil", label: "clínicas atendidas" },
     { value: "R$100 milhões", label: "transacionados" },
     { value: "40 mil", label: "pessoas com acesso ampliado a tratamentos" },
   ],
+  blocksTitle: "O que construí",
+  blocksIntro:
+    "Do problema de negócio ao sistema em produção, cinco frentes em que fui responsável pela solução.",
   blocks: [
     {
       title: "Plataforma de cobrança",
@@ -64,6 +68,7 @@ export const experience = {
         "Conduzi a migração de Bubble para Xano sem downtime e sem reescrever tudo do zero.",
     },
   ],
+  trajectoryTitle: "Trajetória",
   milestones: [
     { year: "Aos 16", text: "Aprendi a programar na escola pública." },
     { year: "2021", text: "Desenvolvedor. Entrei para construir o primeiro produto da empresa." },

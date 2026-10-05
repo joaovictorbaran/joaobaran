@@ -437,11 +437,15 @@ html.jb-js.jb-js-played .jb-hero__cta {
   max-width: 640px;
 }
 
+.jb-experience__eyebrow {
+  margin-top: 48px;
+}
+
 .jb-experience__impact {
   display: flex;
   flex-direction: column;
   gap: 28px;
-  margin-top: 48px;
+  margin-top: 20px;
 }
 
 .jb-experience__impact-value {
@@ -453,11 +457,15 @@ html.jb-js.jb-js-played .jb-hero__cta {
   max-width: 260px;
 }
 
+.jb-experience__blocks-intro {
+  margin-top: 88px;
+}
+
 .jb-experience__blocks {
   display: flex;
   flex-direction: column;
   gap: 64px;
-  margin-top: 72px;
+  margin-top: 40px;
 }
 
 .jb-experience__block {
@@ -1016,19 +1024,27 @@ html.jb-js.jb-js-played .jb-hero__cta {
     margin-top: 20px;
   }
 
+  .jb-experience__eyebrow {
+    margin-top: 80px;
+  }
+
   .jb-experience__impact {
     flex-direction: row;
     gap: 32px;
-    margin-top: 80px;
+    margin-top: 24px;
   }
 
   .jb-experience__impact > * {
     flex: 1;
   }
 
+  .jb-experience__blocks-intro {
+    margin-top: 140px;
+  }
+
   .jb-experience__blocks {
     gap: 112px;
-    margin-top: 128px;
+    margin-top: 64px;
   }
 
   .jb-experience__block {
