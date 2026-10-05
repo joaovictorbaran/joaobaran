@@ -22,6 +22,10 @@ export function Experience() {
           <p className="jb-experience__lead text-body text-text-2">{status.currentLine}</p>
         </Reveal>
 
+        <Reveal>
+          <p className="jb-experience__eyebrow text-small text-text-3">{experience.impactLabel}</p>
+        </Reveal>
+
         <div className="jb-experience__impact">
           {experience.impact.map((item, index) => (
             <Reveal key={item.label} delay={index * 80}>
@@ -31,6 +35,11 @@ export function Experience() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal className="jb-experience__blocks-intro">
+          <h2 className="text-section text-text">{experience.blocksTitle}</h2>
+          <p className="jb-experience__lead text-body text-text-2">{experience.blocksIntro}</p>
+        </Reveal>
 
         <div className="jb-experience__blocks">
           {experience.blocks.map((block, index) => {
@@ -53,7 +62,7 @@ export function Experience() {
 
         <div className="jb-experience__trajectory">
           <Reveal>
-            <h3 className="text-subtitle text-text">Trajetória</h3>
+            <h2 className="text-section text-text">{experience.trajectoryTitle}</h2>
           </Reveal>
           <div className="jb-experience__timeline">
             <div className="jb-experience__timeline-line" aria-hidden="true" />
