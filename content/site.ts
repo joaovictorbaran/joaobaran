@@ -121,10 +121,15 @@ export const canais = {
 };
 
 export const contact = {
-  title: "Vamos conversar.",
-  lead: "Quer falar sobre engenharia, produto ou uma oportunidade? Me manda um e-mail.",
+  title: "Chegou até aqui? Vamos conversar.",
+  lead: "Engenharia, produto ou uma oportunidade: me chama por onde for mais fácil.",
   photoAlt: "João Baran de camisa branca, com os braços cruzados",
-  linkedin: "Ou fale comigo no LinkedIn",
+  emailCta: "Enviar e-mail",
+  emailSubject: "Contato pelo site",
+  whatsappCta: "WhatsApp",
+  // Número comercial: (48) 93618-4688.
+  whatsappHref: "https://wa.me/5548936184688?text=Oi%20Jo%C3%A3o%2C%20vim%20pelo%20seu%20site.",
+  linkedinCta: "LinkedIn",
 };
 
 export const footer = {
