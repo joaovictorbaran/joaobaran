@@ -204,8 +204,8 @@ O cargo atual fica num único lugar, para ser trocado de uma vez quando mudar:
 export const status = {
   role: "CTO",
   company: "Parcela Mais",
-  currentLine: "Sou CTO da Parcela Mais, uma fintech de saúde que ajuda clínicas de todo o Brasil a oferecer tratamentos parcelados aos pacientes.",
-  currentMilestone: { year: "2024", text: "CTO. Lidero um time de 8 pessoas, com processos de desenvolvimento apoiados por IA." },
+  currentLine: "Construí o sistema inteiro da Parcela Mais, fintech de saúde que ajuda clínicas de todo o Brasil a oferecer tratamento parcelado.",
+  currentMilestone: { year: "2024", text: "CTO. Liderei um time de 8 pessoas, com processos de desenvolvimento apoiados por IA." },
 };
 ```
 
@@ -277,7 +277,7 @@ De desenvolvedor a CTO na mesma empresa.
 
 **Fechamento**
 ```
-Em todos esses sistemas, o código foi a parte mais fácil. O difícil foi entender o problema certo.
+Meu trabalho é achar o problema que vale resolver e colocar a solução no ar.
 [Ver CV]  → /cv (botão secundário, abre em nova aba)
 ```
 
