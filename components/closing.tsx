@@ -12,13 +12,14 @@ import { Reveal } from "./reveal";
 export function Closing() {
   return (
     <section className="jb-closing" aria-labelledby="closing-title">
+      <div className="jb-closing__halo" aria-hidden="true" />
       <div className="jb-closing__stage">
         <div className="jb-closing__sphere" aria-hidden="true">
           <Image
             className="jb-closing__image"
             src={sphere}
             alt=""
-            sizes="(min-width: 768px) 964px, 421px"
+            sizes="(min-width: 768px) 670px, 311px"
           />
         </div>
 

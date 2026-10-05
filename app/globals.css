@@ -813,17 +813,39 @@ html.jb-js.jb-js-played .jb-hero__cta {
 
 /* Dobra azul (BAR-76): a única chamada para ação. A esfera é o arquivo real icon.png. */
 .jb-closing {
+  position: relative;
   display: flex;
   min-height: 100vh;
   min-height: 100svh;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  /* Respiro mínimo: a esfera nunca encosta nas bordas da dobra, mesmo em telas baixas. */
+  padding-block: 48px;
+}
+
+/* Halo de brilho atrás da esfera: quadrado com diâmetro igual à altura da dobra, que
+   esmaece até transparente antes das bordas (sem box-shadow). */
+.jb-closing__halo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(390px, 100vw);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle closest-side,
+    rgba(40, 90, 255, 0.42) 0%,
+    rgba(40, 90, 255, 0.42) 60%,
+    rgba(40, 90, 255, 0.16) 76%,
+    rgba(40, 90, 255, 0) 100%
+  );
+  pointer-events: none;
 }
 
 .jb-closing__stage {
   position: relative;
-  width: min(358px, calc(100% - 32px));
+  width: min(260px, calc(100% - 32px));
   aspect-ratio: 1;
 }
 
@@ -832,9 +854,9 @@ html.jb-js.jb-js-played .jb-hero__cta {
   inset: 0;
   overflow: hidden;
   border-radius: 50%;
-  box-shadow:
-    0 0 60px 6px rgba(0, 122, 255, 0.45),
-    0 0 160px 30px rgba(0, 122, 255, 0.25);
+  /* Borda suavizada, sem box-shadow. */
+  -webkit-mask-image: radial-gradient(circle closest-side, #000 96%, transparent 100%);
+  mask-image: radial-gradient(circle closest-side, #000 96%, transparent 100%);
 }
 
 .jb-closing__image {
@@ -857,20 +879,20 @@ html.jb-js.jb-js-played .jb-hero__cta {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 16px;
-  /* Compensa botão + espaço para o título (texto branco) ficar no centro da esfera, longe
-     da borda ciano onde o contraste cai abaixo de 4,5:1 (vale até ~67% do raio). */
-  padding-top: 64px;
+  gap: 12px;
+  /* Compensa botão (44px) + espaço para o título (texto branco) ficar no centro da esfera,
+     longe da borda ciano onde o contraste cai abaixo de 4,5:1 (vale até ~67% do raio). */
+  padding-top: 56px;
   text-align: center;
 }
 
 .jb-closing__title {
   margin: 0;
   color: var(--color-text);
-  font-size: 28px;
+  font-size: 21px;
   font-weight: 700;
   letter-spacing: -0.02em;
-  line-height: 1.15;
+  line-height: 1.1;
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.35);
 }
 
@@ -888,14 +910,14 @@ html.jb-js.jb-js-played .jb-hero__cta {
 
 .jb-closing__cta {
   display: inline-flex;
-  min-height: 48px;
+  min-height: 44px;
   align-items: center;
   justify-content: center;
   border-radius: 9999px;
   background: #ffffff;
-  padding: 12px 24px;
+  padding: 10px 16px;
   color: var(--color-glow-deep);
-  font-size: var(--text-button);
+  font-size: 15px;
   font-weight: 600;
   line-height: 1.25;
   text-decoration: none;
@@ -1337,17 +1359,28 @@ html.jb-js.jb-js-played .jb-hero__cta {
     max-height: none;
   }
 
+  .jb-closing__halo {
+    width: min(900px, 100svh, 100vw);
+  }
+
   .jb-closing__stage {
-    width: min(820px, calc(100% - 64px));
+    width: 560px;
   }
 
   .jb-closing__title {
-    font-size: 56px;
+    font-size: 40px;
+    line-height: 1.15;
   }
 
   .jb-closing__content {
-    gap: 32px;
-    padding-top: 80px;
+    gap: 24px;
+    padding-top: 72px;
+  }
+
+  .jb-closing__cta {
+    min-height: 48px;
+    padding: 12px 24px;
+    font-size: var(--text-button);
   }
 
   .jb-contact__email-link {

@@ -322,7 +322,9 @@ contato@joaobaran.com  [ícone copiar]
 - O e-mail é um link `mailto:` com o ícone de copiar ao lado (botão de 44px, `aria-label="Copiar e-mail"`). Ao copiar: o ícone vira um check azul e aparece um balão "Copiado" por 2 segundos, anunciado por uma região `role="status"`. Usar a API de área de transferência com alternativa para navegadores antigos.
 - "Entrar em contato" (hero), "Contato" (menu) e "Contato" (rodapé) levam a esta dobra.
 
-**Dobra azul, a única chamada para ação.** Tela cheia (`100svh`), fundo escuro, com a esfera do favicon grande e centralizada. A esfera é o arquivo real `assets/brand/icon.png` (via `next/image`), ampliado a 119,5% dentro de um círculo recortado (`border-radius: 50%`, `overflow: hidden`) com brilho externo azul (`box-shadow`). Não é desenhada em CSS. Tamanho: 820px no desktop, `min(358px, 100% - 32px)` no celular.
+**Dobra azul, a única chamada para ação.** Tela cheia (`100svh`), fundo `#0a0a0a` (o mesmo da dobra de cima, sem emenda), com a esfera do favicon centralizada. A esfera é o arquivo real `assets/brand/icon.png` (via `next/image`), ampliado a 119,5% dentro de um círculo recortado (`border-radius: 50%`, `overflow: hidden`), com a borda suavizada por `mask-image: radial-gradient(circle closest-side, #000 96%, transparent 100%)`. Não é desenhada em CSS e não usa `box-shadow`. Tamanho: 560px no desktop (cerca de 170px de respiro acima e abaixo numa dobra de 900px) e 260px no celular; nunca encosta nas bordas da dobra.
+
+Atrás da esfera, um halo azul: `radial-gradient(circle closest-side, rgba(40,90,255,.42) 0%, rgba(40,90,255,.42) 60%, rgba(40,90,255,.16) 76%, rgba(40,90,255,0) 100%)` num quadrado com diâmetro igual à altura da dobra (900px no desktop, 390px no celular), para o brilho esmaecer até transparente antes das bordas.
 
 ```
 Chegou até aqui?
@@ -331,8 +333,8 @@ mensagem.|          (cursor #8be9ff piscando)
 [Mandar mensagem]
 ```
 
-- Texto branco, 56px no desktop e 28px no celular, em três linhas fixas, com `text-shadow` suave. O título fica no centro da esfera, dentro de ~67% do raio: é até onde o contraste do branco sobre a esfera passa de 4,5:1 (medido nos pixels do arquivo).
-- Botão único, branco com texto `glow-deep`, abrindo o WhatsApp comercial com a mensagem pronta. É a **única** dobra com botão de WhatsApp.
+- Texto branco, 40px no desktop e 21px no celular, em três linhas fixas, com `text-shadow` suave. O título fica no centro da esfera, em torno de ~64% do raio no desktop (e até ~70% no celular): o branco sobre a esfera passa de 4,5:1 até ~67% do raio (medido nos pixels do arquivo).
+- Botão único, branco com texto `glow-deep`, abrindo o WhatsApp comercial com a mensagem pronta (44px de altura no celular, 48px no desktop). É a **única** dobra com botão de WhatsApp.
 
 ### 7.7 Rodapé
 
