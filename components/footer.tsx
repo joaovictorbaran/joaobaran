@@ -16,7 +16,7 @@ export function Footer() {
     <footer className="jb-footer">
       <div className="jb-container">
         <div className="jb-footer__columns">
-          <div className="jb-footer__brand">
+          <div>
             <p className="jb-footer__name text-body text-text">João Baran</p>
             <p className="jb-footer__tagline">{hero.support}</p>
           </div>

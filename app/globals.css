@@ -1383,20 +1383,12 @@ html.jb-js.jb-js-played .jb-hero__cta {
     font-size: var(--text-button);
   }
 
-  .jb-contact__email-link {
-    font-size: 24px;
-  }
-
   .jb-contact__actions {
     margin-top: 36px;
   }
 
   .jb-contact__email-link {
     font-size: 24px;
-  }
-
-  .jb-contact__linkedin {
-    margin-top: 12px;
   }
 
   .jb-footer__columns {

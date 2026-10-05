@@ -12,7 +12,7 @@ export function Contact() {
   return (
     <section id="contato" className="jb-contact">
       <div className="jb-container jb-contact__inner">
-        <Reveal className="jb-contact__photo">
+        <Reveal>
           <Image
             src={photo}
             alt={contact.photoAlt}
@@ -22,7 +22,7 @@ export function Contact() {
           />
         </Reveal>
 
-        <Reveal delay={120} className="jb-contact__copy">
+        <Reveal delay={120}>
           <h2 className="text-section text-text">{contact.title}</h2>
           <p className="jb-contact__lead text-body text-text-2">{contact.lead}</p>
 
