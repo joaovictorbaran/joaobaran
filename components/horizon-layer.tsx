@@ -1,14 +1,11 @@
 "use client";
 
 import { useEffect, useId, useRef, useState, useSyncExternalStore } from "react";
-import { useReducedMotion } from "motion/react";
 
 const MOBILE_QUERY = "(max-width: 767px)";
 const DESKTOP_KEY_POINTS = "0.50;0.86;0.50";
 const MOBILE_KEY_POINTS = "0.74;0.90;0.74";
 const DURATION_S = 18;
-// Metade da duração do animateMotion: onde a luz fica parada com prefers-reduced-motion.
-const HALF_DURATION_S = DURATION_S / 2;
 
 function subscribeToMobileQuery(callback: () => void) {
   const mql = window.matchMedia(MOBILE_QUERY);
@@ -28,37 +25,15 @@ function useIsMobile() {
   return useSyncExternalStore(subscribeToMobileQuery, getMobileQuerySnapshot, getMobileQueryServerSnapshot);
 }
 
-function PauseIcon() {
-  return (
-    <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
-      <rect x="6" y="4.5" width="3" height="11" rx="1" fill="currentColor" />
-      <rect x="11" y="4.5" width="3" height="11" rx="1" fill="currentColor" />
-    </svg>
-  );
-}
-
-function PlayIcon() {
-  return (
-    <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
-      <path
-        d="M6.5 4.8v10.4a.8.8 0 0 0 1.22.68l8.3-5.2a.8.8 0 0 0 0-1.36l-8.3-5.2A.8.8 0 0 0 6.5 4.8Z"
-        fill="currentColor"
-      />
-    </svg>
-  );
-}
-
 /**
  * Fundo animado do hero (BAR-25, identidade "Construindo o Futuro"): o horizonte com um
  * foco de luz que faz uma deriva lenta ao longo de um arco. Documentado em
  * docs/decisions/002-animated-hero-background.md, com a excessão à regra "cada animação
  * roda uma vez" e os limites de acessibilidade abaixo.
  *
- * Três coisas podem pausar a animação, e todas controlam a mesma camada em conjunto:
- * o botão de pausa (intenção do usuário, nos dois sentidos — dá para retomar mesmo com o
- * sistema pedindo movimento reduzido, como a WCAG 2.2.2 exige), `prefers-reduced-motion`
- * (padrão inicial) e o hero saindo da tela (`IntersectionObserver`, por desempenho, não
- * afeta o que o botão mostra).
+ * A animação roda igual para todos, sem controle de pausa e sem tratamento de
+ * `prefers-reduced-motion`. A única pausa é por desempenho: quando o hero sai da tela
+ * (`IntersectionObserver`).
  */
 export function HorizonLayer() {
   const gradientHaloId = useId();
@@ -68,11 +43,8 @@ export function HorizonLayer() {
   const svgRef = useRef<SVGSVGElement>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
 
-  const reducedMotion = Boolean(useReducedMotion());
   const isMobile = useIsMobile();
   const [isVisible, setIsVisible] = useState(true);
-  // null = segue o padrão do sistema (reducedMotion); true/false = o usuário decidiu.
-  const [userOverride, setUserOverride] = useState<boolean | null>(null);
 
   useEffect(() => {
     const el = wrapperRef.current;
@@ -84,30 +56,23 @@ export function HorizonLayer() {
     return () => observer.disconnect();
   }, []);
 
-  const isPaused = userOverride ?? reducedMotion;
-  const shouldAnimate = isVisible && !isPaused;
-
   useEffect(() => {
     const svg = svgRef.current;
     if (!svg) return;
 
-    if (shouldAnimate) {
+    if (isVisible) {
       svg.unpauseAnimations();
-      return;
+    } else {
+      svg.pauseAnimations();
     }
-
-    svg.pauseAnimations();
-    if (isPaused) {
-      svg.setCurrentTime(HALF_DURATION_S);
-    }
-  }, [shouldAnimate, isPaused]);
+  }, [isVisible]);
 
   const keyPoints = isMobile ? MOBILE_KEY_POINTS : DESKTOP_KEY_POINTS;
   const preserveAspectRatio = isMobile ? "xMaxYMid slice" : "xMidYMid slice";
 
   return (
     <>
-      <div ref={wrapperRef} className="jb-hero__horizon" aria-hidden="true" data-paused={!shouldAnimate}>
+      <div ref={wrapperRef} className="jb-hero__horizon" aria-hidden="true" data-paused={!isVisible}>
         <svg ref={svgRef} viewBox="0 0 1983 793" preserveAspectRatio={preserveAspectRatio}>
           <defs>
             <radialGradient id={gradientHaloId}>
@@ -154,16 +119,6 @@ export function HorizonLayer() {
       </div>
 
       <div className="jb-hero__shadow" aria-hidden="true" />
-
-      <button
-        type="button"
-        className="jb-hero__motion-toggle"
-        aria-label={isPaused ? "Retomar animação do fundo" : "Pausar animação do fundo"}
-        aria-pressed={isPaused}
-        onClick={() => setUserOverride(!isPaused)}
-      >
-        {isPaused ? <PlayIcon /> : <PauseIcon />}
-      </button>
     </>
   );
 }

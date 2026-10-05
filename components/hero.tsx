@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useReducedMotion } from "motion/react";
 import { Cursor } from "./cursor";
 import { HorizonLayer } from "./horizon-layer";
 import { hero } from "@/content/site";
@@ -28,12 +27,11 @@ function markSessionPlayed() {
 }
 
 export function Hero() {
-  const reducedMotion = useReducedMotion();
   const [shown, setShown] = useState(0);
   const [done, setDone] = useState(false);
 
   useEffect(() => {
-    if (reducedMotion || readSessionPlayed()) {
+    if (readSessionPlayed()) {
       const timer = setTimeout(() => {
         setShown(TITLE.length);
         setDone(true);
@@ -56,7 +54,7 @@ export function Hero() {
     );
 
     return () => timers.forEach(clearTimeout);
-  }, [reducedMotion]);
+  }, []);
 
   const chars = [...TITLE];
 
