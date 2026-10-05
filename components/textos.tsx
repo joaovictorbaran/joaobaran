@@ -4,24 +4,8 @@ import { getFeaturedPosts } from "@/lib/posts";
 import { textos } from "@/content/site";
 import { Reveal } from "./reveal";
 
-function ArrowIcon() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" className="jb-textos__arrow-icon">
-      <path
-        d="M4 10 L10 4 M5 4 H10 V9"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        fill="none"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
 export function Textos() {
   const posts = getFeaturedPosts();
-  const isExternal = textos.appearance.href.startsWith("http");
 
   return (
     <section id="textos" className="jb-textos">
@@ -42,21 +26,6 @@ export function Textos() {
             </Reveal>
           ))}
         </div>
-
-        <Reveal delay={120} className="jb-textos__appearance">
-          <a
-            className="jb-textos__appearance-link"
-            href={textos.appearance.href}
-            target={isExternal ? "_blank" : undefined}
-            rel={isExternal ? "noopener noreferrer" : undefined}
-          >
-            <span>
-              <span className="text-small text-text-3">{textos.appearance.label}</span>
-              <span className="jb-textos__appearance-title text-body text-text">{textos.appearance.title}</span>
-            </span>
-            <ArrowIcon />
-          </a>
-        </Reveal>
 
         <Reveal className="jb-textos__cta">
           <Link href="/textos" className="jb-btn2">

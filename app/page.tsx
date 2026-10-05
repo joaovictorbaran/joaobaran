@@ -3,6 +3,7 @@ import { Menu } from "@/components/menu";
 import { Hero } from "@/components/hero";
 import { Experience } from "@/components/experience";
 import { Textos } from "@/components/textos";
+import { Aparicoes } from "@/components/aparicoes";
 import { Channels } from "@/components/channels";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
@@ -22,6 +23,7 @@ export default function HomePage() {
         <Hero />
         <Experience />
         <Textos />
+        <Aparicoes />
         <Channels />
         <Contact />
       </main>

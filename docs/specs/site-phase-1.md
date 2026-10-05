@@ -291,7 +291,7 @@ Sobre construir produtos, tecnologia e negócios.
 ```
 
 - Três cards (`surface`, raio 24px) com data, título e resumo. Mostram os textos com `featured: true`, do mais recente para o mais antigo, no máximo 3. Se houver menos de 3 destaques, completar com os mais recentes.
-- Card de aparição, só com contorno: "Aparição" em `text-3` e "Podcast Sem Codar, conversa com Renato Asse", com seta, link externo (URL pendente).
+- (BAR-71) A aparição saiu de "Textos" e virou a seção própria "Aparições", entre "Textos" e "Canais": card grande com miniatura 16:9 (servida do repositório, sem requisição ao YouTube), ícone de play e o título "Podcast Sem Codar, conversa com Renato Asse", linkando para a playlist, em nova aba.
 - Botão secundário "Ver todos os textos" → `/textos`.
 
 ### 7.5 Canais (`#canais`)

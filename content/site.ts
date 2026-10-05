@@ -126,15 +126,33 @@ export const footer = {
   cv: "CV",
 };
 
+export type Aparicao = {
+  title: string;
+  href: string;
+  image: { src: string; alt: string; width: number; height: number };
+};
+
+// Para adicionar uma aparição, incluir um item aqui e a miniatura em public/images/aparicoes/.
+export const aparicoes: { title: string; items: Aparicao[] } = {
+  title: "Aparições",
+  items: [
+    {
+      title: "Podcast Sem Codar, conversa com Renato Asse",
+      href: "https://youtube.com/playlist?list=PL25tm4Xi9g3ygCnQjSm0qCBgpSvl6RHSL",
+      image: {
+        src: "/images/aparicoes/sem-codar.jpg",
+        alt: "Miniatura do vídeo do podcast Sem Codar, com o texto “Tech lead, R$45 milhões, no code”",
+        width: 1280,
+        height: 720,
+      },
+    },
+  ],
+};
+
 export const textos = {
   title: "Textos",
   lead: "Sobre construir produtos, tecnologia e negócios.",
   viewAll: "Ver todos os textos",
-  appearance: {
-    label: "Aparição",
-    title: "Podcast Sem Codar, conversa com Renato Asse",
-    href: "https://youtube.com/playlist?list=PL25tm4Xi9g3ygCnQjSm0qCBgpSvl6RHSL",
-  },
   invite: {
     title: "Quer continuar a conversa?",
     cta: "Entrar em contato",
