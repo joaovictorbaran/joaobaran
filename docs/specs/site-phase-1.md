@@ -299,9 +299,9 @@ Título "Canais". Lista com linhas divisórias; cada linha é um link inteiro (a
 | Canal | Descrição | Link |
 |---|---|---|
 | LinkedIn | Trajetória e bastidores de carreira. | linkedin.com/in/joaovictorbaran |
-| GitHub | Código e projetos. | pendente |
+| GitHub | Código e projetos. | github.com/joaovictorbaran |
 | YouTube | Vídeos sobre tecnologia, produto e carreira. | youtube.com/@joaobaran |
-| X | Construção em público. | pendente |
+| X | Construção em público. | x.com/joaovbaran |
 
 Instagram entra quando o perfil for definido. Substack não aparece no site.
 
@@ -439,7 +439,7 @@ Ordem obrigatória: primeiro no site, depois no Substack com o link "publicado o
 
 ## 12. Ícones
 
-- `app/icon.png`: a esfera da identidade "Construindo o Futuro" (`assets/brand/sphere.png`), fundo transparente fora do círculo (BAR-25). Substitui o monograma "JB" da fase inicial.
+- `app/icon.png`: a esfera da identidade "Construindo o Futuro" (`assets/brand/icon.png`), fundo transparente fora do círculo (BAR-25). Substitui o monograma "JB" da fase inicial.
 - `app/apple-icon.png` (180 x 180): a mesma esfera, fundo `#0A0A0A` (iOS não aceita transparência).
 
 ---
