@@ -35,7 +35,9 @@ export function Aparicoes() {
                     sizes="(min-width: 1024px) 1040px, 100vw"
                   />
                   <span className="jb-aparicoes__play" aria-hidden="true">
-                    <PlayIcon />
+                    <span className="jb-aparicoes__play-circle">
+                      <PlayIcon />
+                    </span>
                   </span>
                 </span>
                 <span className="jb-aparicoes__title text-subtitle text-text">{item.title}</span>
