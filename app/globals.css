@@ -981,6 +981,17 @@ html.jb-js.jb-js-played .jb-hero__cta {
   margin: 8px 0 0;
 }
 
+/* Os dois grupos de links só viram colunas próprias no celular; do tablet para cima os
+   wrappers somem do layout (display: contents) e o grid de três colunas continua igual. */
+.jb-footer__links,
+.jb-footer__group {
+  display: contents;
+}
+
+.jb-footer__label {
+  display: none;
+}
+
 .jb-footer__list {
   display: flex;
   flex-direction: column;
@@ -1490,5 +1501,50 @@ html.jb-js.jb-js-played .jb-hero__cta {
     transform: none !important;
     opacity: 1 !important;
     will-change: auto;
+  }
+}
+
+/* Footer no celular (BAR-81): marca em cima, depois duas colunas rotuladas e a linha inferior. */
+@media (max-width: 767px) {
+  .jb-footer {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .jb-footer__columns {
+    gap: 24px;
+    padding-block: 32px 16px;
+  }
+
+  .jb-footer__links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .jb-footer__group {
+    display: block;
+  }
+
+  .jb-footer__label {
+    display: block;
+    margin: 0 0 4px;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .jb-footer__link {
+    min-height: 44px;
+    font-size: 16px;
+  }
+
+  .jb-footer__link--inline {
+    font-size: inherit;
+  }
+
+  .jb-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-block: 12px 16px;
   }
 }

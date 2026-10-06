@@ -139,6 +139,9 @@ export const closing = {
 };
 
 export const footer = {
+  // Rótulos visíveis das duas colunas do footer no celular.
+  navTitle: "Navegação",
+  contactTitle: "Contato",
   navLabel: "Navegação do rodapé",
   contactLabel: "Contato e redes",
   nav: [
