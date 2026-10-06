@@ -21,32 +21,44 @@ export function Footer() {
             <p className="jb-footer__tagline">{hero.support}</p>
           </div>
 
-          <nav aria-label={footer.navLabel}>
-            <ul className="jb-footer__list">
-              {footer.nav.map((item) => (
-                <li key={item.label}>
-                  <a className="jb-footer__link" href={item.href}>
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
+          <div className="jb-footer__links">
+            <div className="jb-footer__group">
+              <p className="jb-footer__label" aria-hidden="true">
+                {footer.navTitle}
+              </p>
+              <nav aria-label={footer.navLabel}>
+                <ul className="jb-footer__list">
+                  {footer.nav.map((item) => (
+                    <li key={item.label}>
+                      <a className="jb-footer__link" href={item.href}>
+                        {item.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            </div>
 
-          <ul className="jb-footer__list" aria-label={footer.contactLabel}>
-            {CONTACT_LINKS.map((item) => (
-              <li key={item.label}>
-                <a
-                  className="jb-footer__link"
-                  href={item.href}
-                  target={item.external ? "_blank" : undefined}
-                  rel={item.external ? "noopener noreferrer" : undefined}
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+            <div className="jb-footer__group">
+              <p className="jb-footer__label" aria-hidden="true">
+                {footer.contactTitle}
+              </p>
+              <ul className="jb-footer__list" aria-label={footer.contactLabel}>
+                {CONTACT_LINKS.map((item) => (
+                  <li key={item.label}>
+                    <a
+                      className="jb-footer__link"
+                      href={item.href}
+                      target={item.external ? "_blank" : undefined}
+                      rel={item.external ? "noopener noreferrer" : undefined}
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
 
         <div className="jb-footer__bottom">
