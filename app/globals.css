@@ -880,9 +880,6 @@ html.jb-js.jb-js-played .jb-hero__cta {
   align-items: center;
   justify-content: center;
   gap: 12px;
-  /* Compensa botão (44px) + espaço para o título (texto branco) ficar no centro da esfera,
-     longe da borda ciano onde o contraste cai abaixo de 4,5:1 (vale até ~67% do raio). */
-  padding-top: 56px;
   text-align: center;
 }
 
@@ -901,7 +898,16 @@ html.jb-js.jb-js-played .jb-hero__cta {
   white-space: nowrap;
 }
 
+.jb-closing__end {
+  position: relative;
+}
+
 .jb-closing__cursor {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin: 0 0 0 3px;
+  transform: translateY(-50%);
   background: #8be9ff;
   box-shadow:
     0 0 10px rgba(139, 233, 255, 0.9),
@@ -1374,7 +1380,6 @@ html.jb-js.jb-js-played .jb-hero__cta {
 
   .jb-closing__content {
     gap: 24px;
-    padding-top: 72px;
   }
 
   .jb-closing__cta {

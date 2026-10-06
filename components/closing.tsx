@@ -27,8 +27,16 @@ export function Closing() {
           <h2 id="closing-title" className="jb-closing__title">
             {closing.lines.map((line, index) => (
               <span key={line} className="jb-closing__line">
-                {line}
-                {index === closing.lines.length - 1 ? <Cursor className="jb-closing__cursor" /> : null}
+                {index === closing.lines.length - 1 ? (
+                  // O cursor fica fora do fluxo (position: absolute): ele não conta na largura
+                  // da linha, então as três linhas ficam centralizadas com ou sem o cursor.
+                  <span className="jb-closing__end">
+                    {line}
+                    <Cursor className="jb-closing__cursor" />
+                  </span>
+                ) : (
+                  line
+                )}
               </span>
             ))}
           </h2>
