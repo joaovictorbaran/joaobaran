@@ -10,6 +10,8 @@ export type Post = {
   draft: boolean;
   /** Caminho público da capa (ex.: "/posts/<slug>/capa.jpg"), quando o texto tem uma. */
   cover?: string;
+  /** Texto alternativo da capa. Sem ele, a capa é tratada como decorativa (alt vazio). */
+  coverAlt?: string;
   content: string;
   readingTime: number;
 };
@@ -83,6 +85,8 @@ export function parseFrontmatter(fileName: string, raw: string) {
     throw new Error(`content/posts/${fileName}: campo "cover" precisa começar com "/posts/": "${cover}".`);
   }
 
+  const coverAlt = fields.coverAlt === undefined ? undefined : stripQuotes(fields.coverAlt);
+
   return {
     title,
     date: dateRaw,
@@ -90,6 +94,7 @@ export function parseFrontmatter(fileName: string, raw: string) {
     featured: fields.featured === "true",
     draft: fields.draft === "true",
     ...(cover !== undefined && { cover }),
+    ...(coverAlt !== undefined && coverAlt !== "" && { coverAlt }),
     content: body.trim(),
   };
 }

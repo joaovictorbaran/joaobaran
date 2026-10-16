@@ -5,6 +5,7 @@ summary: "Por que Bubble e Vibe Coding não deveriam ser vistos como concorrente
 featured: true
 draft: false
 cover: "/posts/no-code-vs-vibe-coding/capa.jpg"
+coverAlt: "Homem pensativo com a mão no queixo, entre dois monitores: um com bolhas azuis e outro com um coração luminoso."
 ---
 
 Esses dias me deparei com um tópico na Comunidade Sem Codar com o mesmo título desta seção do texto que vos escrevo: O Bubble ainda é viável?

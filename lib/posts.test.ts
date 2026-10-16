@@ -112,6 +112,12 @@ describe("parseFrontmatter", () => {
     expect(parseFrontmatter("com-capa.md", withCover).cover).toBe("/posts/meu-texto/capa.jpg");
   });
 
+  it("lê o texto alternativo opcional da capa", () => {
+    const withAlt = VALID_FRONTMATTER.replace("draft: false", 'draft: false\ncover: "/posts/meu-texto/capa.jpg"\ncoverAlt: "Uma mesa de trabalho"');
+    expect(parseFrontmatter("com-alt.md", withAlt).coverAlt).toBe("Uma mesa de trabalho");
+    expect(parseFrontmatter("sem-alt.md", VALID_FRONTMATTER).coverAlt).toBeUndefined();
+  });
+
   it("lança um erro claro quando a capa não está em /posts/", () => {
     const invalidCover = VALID_FRONTMATTER.replace("draft: false", "draft: false\ncover: assets/capa.jpg");
     expect(() => parseFrontmatter("capa-invalida.md", invalidCover)).toThrow(/campo "cover" precisa começar com "\/posts\/"/);

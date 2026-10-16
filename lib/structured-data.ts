@@ -27,6 +27,6 @@ export function getArticleJsonLd(post: Post) {
     headline: post.title,
     datePublished: post.date,
     author: { "@id": PERSON_ID },
-    image: `${siteUrl}/textos/${post.slug}/opengraph-image`,
+    image: post.cover ? `${siteUrl}${post.cover}` : `${siteUrl}/textos/${post.slug}/opengraph-image`,
   };
 }

@@ -571,10 +571,27 @@ html.jb-js.jb-js-played .jb-hero__cta {
 .jb-textos__card-link {
   display: block;
   height: 100%;
+  overflow: hidden;
   border-radius: 24px;
   background: var(--color-surface);
-  padding: 24px;
   text-decoration: none;
+}
+
+.jb-textos__card-body {
+  padding: 24px;
+}
+
+/* Área de capa dos cards (home e listagem). Sem imagem, vira um bloco liso da mesma altura. */
+.jb-post-cover {
+  position: relative;
+  display: block;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background: var(--color-surface);
+}
+
+.jb-post-cover__image {
+  object-fit: cover;
 }
 
 .jb-textos__card-title {
@@ -583,8 +600,11 @@ html.jb-js.jb-js-played .jb-hero__cta {
 }
 
 .jb-textos__card-summary {
-  display: block;
+  display: -webkit-box;
+  overflow: hidden;
   margin-top: 10px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
 
 .jb-aparicoes {
@@ -691,14 +711,27 @@ html.jb-js.jb-js-played .jb-hero__cta {
   text-decoration: none;
 }
 
+.jb-textos-list__item .jb-post-cover {
+  aspect-ratio: 2 / 1;
+  border-radius: 16px;
+}
+
+.jb-textos-list__item-date {
+  display: block;
+  margin-top: 20px;
+}
+
 .jb-textos-list__item-title {
   display: block;
   margin-top: 6px;
 }
 
 .jb-textos-list__item-summary {
-  display: block;
+  display: -webkit-box;
+  overflow: hidden;
   margin-top: 8px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
 
 .jb-textos-list__divider {
@@ -1328,7 +1361,7 @@ html.jb-js.jb-js-played .jb-hero__cta {
     flex: 1;
   }
 
-  .jb-textos__card-link {
+  .jb-textos__card-body {
     padding: 28px;
   }
 
