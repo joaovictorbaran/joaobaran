@@ -90,6 +90,19 @@ export default async function TextoPage({ params }: PageProps) {
             {formatDate(post.date)} · {post.readingTime} min de leitura
           </div>
 
+          {post.cover ? (
+            // Capa decorativa (alt vazio): o título já diz do que o texto trata.
+            <Image
+              src={post.cover}
+              alt=""
+              width={1536}
+              height={1024}
+              priority
+              sizes="(min-width: 768px) 680px, 100vw"
+              className="jb-texto__cover"
+            />
+          ) : null}
+
           <div className="jb-prose">
             <ReactMarkdown components={markdownComponents}>{post.content}</ReactMarkdown>
           </div>
