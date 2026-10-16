@@ -5,6 +5,7 @@ summary: "Como divido o trabalho entre Notion, Linear, agentes, GitHub e Vercel,
 featured: true
 draft: false
 cover: "/posts/fluxo-de-trabalho-com-ia/capa.png"
+coverAlt: "Homem sorrindo, recostado com as mãos atrás da cabeça, diante de um notebook e de monitores com quadros de tarefas, à noite."
 ---
 
 Na primeira tarefa que deixei um agente executar sozinho, ele fez push direto na main e marcou a issue como concluída. O código funcionava, mas ninguém tinha revisado nada. O erro foi meu também: eu não tinha explicado até onde o agente podia ir.

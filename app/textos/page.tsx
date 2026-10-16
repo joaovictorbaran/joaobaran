@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Menu } from "@/components/menu";
+import { PostCardCover } from "@/components/post-card-cover";
 import { Reveal } from "@/components/reveal";
 import { formatDate } from "@/lib/format-date";
 import { getPublishedPosts } from "@/lib/posts";
@@ -30,7 +31,8 @@ export default function TextosPage() {
               {posts.map((post, index) => (
                 <Reveal key={post.slug} delay={index * 60}>
                   <Link href={`/textos/${post.slug}`} className="jb-textos-list__item">
-                    <span className="text-small text-text-3">{formatDate(post.date)}</span>
+                    <PostCardCover post={post} sizes="(min-width: 768px) 760px, 100vw" />
+                    <span className="jb-textos-list__item-date text-small text-text-3">{formatDate(post.date)}</span>
                     <h2 className="jb-textos-list__item-title text-subtitle text-text">{post.title}</h2>
                     <p className="jb-textos-list__item-summary text-body text-text-2">{post.summary}</p>
                   </Link>

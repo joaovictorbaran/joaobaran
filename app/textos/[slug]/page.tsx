@@ -7,6 +7,7 @@ import type { Components } from "react-markdown";
 import { JsonLd } from "@/components/json-ld";
 import { Menu } from "@/components/menu";
 import { formatDate } from "@/lib/format-date";
+import { getPublicImageSize } from "@/lib/image-size";
 import { getPostBySlug, getPublishedPosts } from "@/lib/posts";
 import { getArticleJsonLd } from "@/lib/structured-data";
 import { textos } from "@/content/site";
@@ -25,21 +26,45 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {};
   }
 
+  // Com capa, ela é a imagem de compartilhamento; sem capa, vale a imagem gerada (rota opengraph-image).
+  const coverSize = post.cover ? getPublicImageSize(post.cover) : undefined;
+  const shareImage = post.cover
+    ? { url: post.cover, alt: post.coverAlt ?? post.title, ...coverSize }
+    : { url: `/textos/${post.slug}/opengraph-image`, width: 1200, height: 630, alt: post.title };
+
   return {
     title: post.title,
     description: post.summary,
     alternates: { canonical: `/textos/${post.slug}` },
+    openGraph: {
+      type: "article",
+      title: post.title,
+      description: post.summary,
+      url: `/textos/${post.slug}`,
+      publishedTime: post.date,
+      images: [shareImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.summary,
+      images: [shareImage],
+    },
   };
 }
 
+// Proporção padrão só para imagens que não são locais ou cujo arquivo não foi encontrado.
+const FALLBACK_IMAGE_SIZE = { width: 1200, height: 675 };
+
 function ProseImage({ src, alt }: { src?: string; alt?: string }) {
   if (!src) return null;
+  const { width, height } = (src.startsWith("/") && getPublicImageSize(src)) || FALLBACK_IMAGE_SIZE;
   return (
     <Image
       src={src}
       alt={alt ?? ""}
-      width={1200}
-      height={675}
+      width={width}
+      height={height}
       sizes="(min-width: 768px) 680px, 100vw"
       className="jb-prose__image"
     />
@@ -75,6 +100,8 @@ export default async function TextoPage({ params }: PageProps) {
     notFound();
   }
 
+  const coverSize = post.cover ? getPublicImageSize(post.cover) : undefined;
+
   return (
     <>
       <JsonLd data={getArticleJsonLd(post)} />
@@ -91,12 +118,12 @@ export default async function TextoPage({ params }: PageProps) {
           </div>
 
           {post.cover ? (
-            // Capa decorativa (alt vazio): o título já diz do que o texto trata.
+            // Sem coverAlt, a capa é decorativa (alt vazio): o título já diz do que o texto trata.
             <Image
               src={post.cover}
-              alt=""
-              width={1536}
-              height={1024}
+              alt={post.coverAlt ?? ""}
+              width={coverSize?.width ?? 1536}
+              height={coverSize?.height ?? 1024}
               priority
               sizes="(min-width: 768px) 680px, 100vw"
               className="jb-texto__cover"

@@ -5,6 +5,7 @@ summary: "Minha trajetória até o desenvolvimento e o que aprendi sobre estudar
 featured: true
 draft: false
 cover: "/posts/como-comecei-com-a-tecnologia/capa.png"
+coverAlt: "Robô de peças de montar sobre uma mesa à noite, ao lado de um notebook com programação em blocos e de um caderno de anotações."
 ---
 
 ## [**João Victor Baran**](https://www.linkedin.com/in/joaovictorbaran/)

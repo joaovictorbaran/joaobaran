@@ -2,6 +2,7 @@ import Link from "next/link";
 import { formatDate } from "@/lib/format-date";
 import { getFeaturedPosts } from "@/lib/posts";
 import { textos } from "@/content/site";
+import { PostCardCover } from "./post-card-cover";
 import { Reveal } from "./reveal";
 
 export function Textos() {
@@ -19,9 +20,12 @@ export function Textos() {
           {posts.map((post, index) => (
             <Reveal key={post.slug} delay={index * 80} className="jb-textos__card">
               <Link href={`/textos/${post.slug}`} className="jb-textos__card-link">
-                <span className="text-small text-text-3">{formatDate(post.date)}</span>
-                <h3 className="jb-textos__card-title text-subtitle text-text">{post.title}</h3>
-                <p className="jb-textos__card-summary text-body text-text-2">{post.summary}</p>
+                <PostCardCover post={post} sizes="(min-width: 768px) 33vw, 100vw" />
+                <div className="jb-textos__card-body">
+                  <span className="text-small text-text-3">{formatDate(post.date)}</span>
+                  <h3 className="jb-textos__card-title text-subtitle text-text">{post.title}</h3>
+                  <p className="jb-textos__card-summary text-body text-text-2">{post.summary}</p>
+                </div>
               </Link>
             </Reveal>
           ))}
