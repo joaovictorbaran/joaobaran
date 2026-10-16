@@ -2,9 +2,9 @@ import { ImageResponse } from "next/og";
 import { getPostBySlug, getPublishedPosts } from "@/lib/posts";
 import { loadOgFonts, renderOgImage } from "@/lib/og-image";
 
-// Imagem de compartilhamento gerada (título + foto), usada só nos textos sem `cover`.
+// Imagem de compartilhamento gerada (título + foto), usada só nos artigos sem `cover`.
 // Fica numa rota (e não no arquivo `opengraph-image.tsx`) porque o arquivo de convenção
-// sempre vence o `generateMetadata`, e os textos com capa precisam apontar para a capa.
+// sempre vence o `generateMetadata`, e os artigos com capa precisam apontar para a capa.
 export const dynamicParams = false;
 
 const size = { width: 1200, height: 630 };

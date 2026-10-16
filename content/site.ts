@@ -2,7 +2,7 @@ export const menu = {
   brand: "João Baran",
   links: [
     { label: "Experiência", anchor: "experiencia" },
-    { label: "Textos", anchor: "textos", pageHref: "/textos" },
+    { label: "Artigos", anchor: "artigos", pageHref: "/artigos" },
     { label: "Contato", anchor: "contato" },
   ],
 };
@@ -146,7 +146,7 @@ export const footer = {
   contactLabel: "Contato e redes",
   nav: [
     { label: "Experiência", href: "/#experiencia" },
-    { label: "Textos", href: "/#textos" },
+    { label: "Artigos", href: "/#artigos" },
     { label: "Aparições", href: "/#aparicoes" },
     { label: "Contato", href: "/#contato" },
     { label: "CV", href: "/cv" },
@@ -183,13 +183,13 @@ export const aparicoes: { title: string; items: Aparicao[] } = {
   ],
 };
 
-export const textos = {
-  title: "Textos",
+export const artigos = {
+  title: "Artigos",
   lead: "Sobre construir produtos, tecnologia e negócios.",
-  viewAll: "Ver todos os textos",
+  viewAll: "Ver todos os artigos",
   invite: {
     title: "Quer continuar a conversa?",
     cta: "Entrar em contato",
-    viewOthers: "Ver outros textos",
+    viewOthers: "Ver outros artigos",
   },
 };

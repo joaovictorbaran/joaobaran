@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Menu } from "@/components/menu";
 import { Hero } from "@/components/hero";
 import { Experience } from "@/components/experience";
-import { Textos } from "@/components/textos";
+import { Artigos } from "@/components/artigos";
 import { Aparicoes } from "@/components/aparicoes";
 import { Channels } from "@/components/channels";
 import { Contact } from "@/components/contact";
@@ -23,7 +23,7 @@ export default function HomePage() {
       <main id="main-content">
         <Hero />
         <Experience />
-        <Textos />
+        <Artigos />
         <Aparicoes />
         <Channels />
         <Contact />
