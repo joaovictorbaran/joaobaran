@@ -16,8 +16,8 @@ function buildLlmsTxt() {
     "Canais:",
     ...realChannels.map((channel) => `- ${channel.name}: ${channel.href}`),
     "",
-    "Textos:",
-    ...posts.map((post) => `- ${post.title}: ${siteUrl}/textos/${post.slug}. ${post.summary}`),
+    "Artigos:",
+    ...posts.map((post) => `- ${post.title}: ${siteUrl}/artigos/${post.slug}. ${post.summary}`),
   ];
 
   return lines.join("\n");

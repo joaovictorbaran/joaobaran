@@ -21,3 +21,7 @@ Cada texto é um arquivo Markdown em `content/posts/<slug>.md`, com imagens em `
 
 - Publicar um texto novo passa por um commit. Ordem: primeiro no site, depois no Substack com "publicado originalmente em joaobaran.com".
 - Na fase 2, as interações usam um banco (Neon ou Supabase, a decidir). Se um dia for preciso escrever pelo navegador, um script migra os arquivos para o banco.
+
+## Nota de 16/10/2026
+
+A seção passou a se chamar "Artigos" e as URLs mudaram de `/textos` e `/textos/<slug>` para `/artigos` e `/artigos/<slug>` (BAR-109). Os endereços antigos redirecionam de forma permanente. A decisão acima não muda: os arquivos continuam em `content/posts/<slug>.md`.

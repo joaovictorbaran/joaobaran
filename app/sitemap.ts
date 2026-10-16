@@ -7,9 +7,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     { url: siteUrl },
-    { url: `${siteUrl}/textos` },
+    { url: `${siteUrl}/artigos` },
     ...posts.map((post) => ({
-      url: `${siteUrl}/textos/${post.slug}`,
+      url: `${siteUrl}/artigos/${post.slug}`,
       lastModified: new Date(post.date),
     })),
   ];

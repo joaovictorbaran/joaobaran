@@ -52,31 +52,31 @@ Site pessoal e canal próprio do João Baran. LinkedIn, GitHub, YouTube e X apon
 | Rota | Conteúdo |
 |---|---|
 | `/` | Página única com todas as seções |
-| `/textos` | Lista de todos os textos |
-| `/textos/[slug]` | Página de um texto |
+| `/artigos` | Lista de todos os artigos |
+| `/artigos/[slug]` | Página de um texto |
 | `/cv` | Redireciona para `/joao-baran-cv.pdf` (abre no navegador) |
 | `/llms.txt` | Resumo para IAs (seção 11) |
 | `/sitemap.xml`, `/robots.txt` | SEO (seção 11) |
 | qualquer outra | Página 404 |
 
-Âncoras da home: `#experiencia`, `#textos`, `#canais`, `#contato`.
+Âncoras da home: `#experiencia`, `#artigos`, `#canais`, `#contato`.
 
 ---
 
 ## 5. Estrutura de arquivos sugerida
 
-Estrutura e código em inglês; textos para pessoas (conteúdo do site, specs, documentação) em português. Nomes em kebab-case, sem acentos. As URLs públicas continuam em português (`/textos`), porque fazem parte do conteúdo.
+Estrutura e código em inglês; textos para pessoas (conteúdo do site, specs, documentação) em português. Nomes em kebab-case, sem acentos. As URLs públicas continuam em português (`/artigos`), porque fazem parte do conteúdo.
 
 ```
 AGENTS.md                instruções para Claude Code e Codex
 app/
   layout.tsx             fonte, metadados base, Analytics, link "Pular para o conteúdo"
   page.tsx               home
-  textos/page.tsx        lista de textos (URL pública em português)
-  textos/[slug]/page.tsx
+  artigos/page.tsx        lista de artigos (URL pública em português)
+  artigos/[slug]/page.tsx
   not-found.tsx
   opengraph-image.tsx
-  textos/[slug]/opengraph-image.tsx
+  artigos/[slug]/opengraph-image.tsx
   icon.svg
   apple-icon.png
   sitemap.ts
@@ -212,10 +212,10 @@ export const status = {
 ### 7.1 Menu
 
 - Esquerda: "João Baran" em texto (600, 16px desktop e 15px celular), leva ao topo.
-- Direita: Experiência, Textos, Contato (14px, cor `text-2`, hover `text`), âncoras da home.
+- Direita: Experiência, Artigos, Contato (14px, cor `text-2`, hover `text`), âncoras da home.
 - Sem menu hambúrguer: os três itens ficam visíveis no celular.
 - Altura de 60px no desktop e 52px no celular, com linha inferior `surface`.
-- Nas páginas `/textos` e `/textos/[slug]`, os itens levam para `/#experiencia`, `/textos` e `/#contato`.
+- Nas páginas `/artigos` e `/artigos/[slug]`, os itens levam para `/#experiencia`, `/artigos` e `/#contato`.
 
 ### 7.2 Abertura (hero)
 
@@ -281,16 +281,16 @@ Meu trabalho é achar o problema que vale resolver e colocar a solução no ar.
 [Ver CV]  → /cv (botão secundário, abre em nova aba)
 ```
 
-### 7.4 Textos (`#textos`)
+### 7.4 Artigos (`#artigos`)
 
 ```
-Textos
+Artigos
 Sobre construir produtos, tecnologia e negócios.
 ```
 
 - Três cards (`surface`, raio 24px) com data, título e resumo. Mostram os textos com `featured: true`, do mais recente para o mais antigo, no máximo 3. Se houver menos de 3 destaques, completar com os mais recentes.
-- (BAR-71) A aparição saiu de "Textos" e virou a seção própria "Aparições", entre "Textos" e "Canais": card grande com miniatura 16:9 (servida do repositório, sem requisição ao YouTube), ícone de play e o título "Podcast Sem Codar, conversa com Renato Asse", linkando para a playlist, em nova aba.
-- Botão secundário "Ver todos os textos" → `/textos`.
+- (BAR-71) A aparição saiu de "Artigos" e virou a seção própria "Aparições", entre "Artigos" e "Canais": card grande com miniatura 16:9 (servida do repositório, sem requisição ao YouTube), ícone de play e o título "Podcast Sem Codar, conversa com Renato Asse", linkando para a playlist, em nova aba.
+- Botão secundário "Ver todos os artigos" → `/artigos`.
 
 ### 7.5 Canais (`#canais`)
 
@@ -341,7 +341,7 @@ mensagem.|          (cursor #8be9ff piscando)
 Linha superior `surface`. Três colunas (empilhadas no celular), texto 14px em `text-3`, hover `text` (BAR-73):
 
 1. **Marca:** "João Baran" e a linha de posicionamento do hero.
-2. **Navegação:** Experiência, Textos, Aparições, Contato (âncoras `/#...`) e CV (→ `/cv`).
+2. **Navegação:** Experiência, Artigos, Aparições, Contato (âncoras `/#...`) e CV (→ `/cv`).
 3. **Contato e redes** (links de texto curtos, sem ícones): e-mail (`mailto:`), WhatsApp (`wa.me`), LinkedIn, GitHub, YouTube e X. Externos em nova aba com `rel="noopener noreferrer"`.
 
 Linha inferior, separada por uma linha `surface`: "Também faço software sob medida na Baran Tecnologia" (link externo) e o ano atual, gerado automaticamente.
@@ -352,14 +352,14 @@ Linha inferior, separada por uma linha `surface`: "Também faço software sob me
 
 ### 8.1 /textos
 
-Menu, título "Textos" (título de seção), linha de apoio "Sobre construir produtos, tecnologia e negócios." e a lista de todos os textos publicados, do mais recente para o mais antigo. Cada item com data, título e resumo, separados por linhas `surface`. Sem imagem de capa. Largura máxima de cerca de 760px. Rodapé.
+Menu, título "Artigos" (título de seção), linha de apoio "Sobre construir produtos, tecnologia e negócios." e a lista de todos os textos publicados, do mais recente para o mais antigo. Cada item com data, título e resumo, separados por linhas `surface`. Sem imagem de capa. Largura máxima de cerca de 760px. Rodapé.
 
 ### 8.2 /textos/[slug]
 
 - Fundo `surface` na área de leitura. Coluna de cerca de 680px, centralizada.
-- Link "Textos" (voltar), título, data e tempo de leitura (cerca de 200 palavras por minuto), corpo do texto.
+- Link "Artigos" (voltar), título, data e tempo de leitura (cerca de 200 palavras por minuto), corpo do texto.
 - Estilo do corpo: 19px desktop e 17px celular, altura de linha 1.6, cor `text`. Títulos internos, listas, citações, código e imagens com estilo coerente com o design system. Imagens com `next/image` e raio de 16px. Links em `accent`.
-- No fim, um card de convite: "Quer continuar a conversa?" com botão principal "Entrar em contato" (→ `/#contato`) e link "Ver outros textos" (→ `/textos`). Texto a validar com o João.
+- No fim, um card de convite: "Quer continuar a conversa?" com botão principal "Entrar em contato" (→ `/#contato`) e link "Ver outros textos" (→ `/artigos`). Texto a validar com o João.
 - Páginas geradas estaticamente no build.
 
 ### 8.3 404
@@ -430,7 +430,7 @@ Ordem obrigatória: primeiro no site, depois no Substack com o link "publicado o
 - **URL canônica** em todas as páginas, com domínio joaobaran.com.
 - **Imagem de compartilhamento** gerada com `next/og` (1200 x 630): fundo preto, "Construindo o futuro." com o cursor azul, "João Baran", "Engenheiro de software" e a foto. Nos textos, o mesmo modelo com o título do texto no lugar da frase.
 - **Dados estruturados (JSON-LD):** `Person` na home (nome, cargo, empresa atual vinda de `status`, URL, `sameAs` com os canais) e `Article` em cada texto (título, data, autor, imagem).
-- **Sitemap** com home, /textos e todos os textos publicados.
+- **Sitemap** com home, /artigos e todos os textos publicados.
 - **robots.txt** liberando todos os buscadores, incluindo os robôs de IA (GPTBot, ClaudeBot, PerplexityBot, Google-Extended).
 - **/llms.txt** gerado no build: nome, um parágrafo sobre quem o João é e o que faz, links dos canais e a lista de textos (título, URL e resumo).
 - Todas as páginas renderizadas no servidor ou geradas estaticamente, com o texto completo no HTML. Nunca carregar conteúdo só no navegador.

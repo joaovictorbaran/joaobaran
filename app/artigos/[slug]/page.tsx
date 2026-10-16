@@ -10,7 +10,7 @@ import { formatDate } from "@/lib/format-date";
 import { getPublicImageSize } from "@/lib/image-size";
 import { getPostBySlug, getPublishedPosts } from "@/lib/posts";
 import { getArticleJsonLd } from "@/lib/structured-data";
-import { textos } from "@/content/site";
+import { artigos } from "@/content/site";
 
 export const dynamicParams = false;
 
@@ -30,17 +30,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const coverSize = post.cover ? getPublicImageSize(post.cover) : undefined;
   const shareImage = post.cover
     ? { url: post.cover, alt: post.coverAlt ?? post.title, ...coverSize }
-    : { url: `/textos/${post.slug}/opengraph-image`, width: 1200, height: 630, alt: post.title };
+    : { url: `/artigos/${post.slug}/opengraph-image`, width: 1200, height: 630, alt: post.title };
 
   return {
     title: post.title,
     description: post.summary,
-    alternates: { canonical: `/textos/${post.slug}` },
+    alternates: { canonical: `/artigos/${post.slug}` },
     openGraph: {
       type: "article",
       title: post.title,
       description: post.summary,
-      url: `/textos/${post.slug}`,
+      url: `/artigos/${post.slug}`,
       publishedTime: post.date,
       images: [shareImage],
     },
@@ -108,8 +108,8 @@ export default async function TextoPage({ params }: PageProps) {
       <Menu />
       <main id="main-content" className="jb-texto">
         <article className="jb-texto__article">
-          <Link href="/textos" className="jb-link">
-            {textos.title}
+          <Link href="/artigos" className="jb-link">
+            {artigos.title}
           </Link>
 
           <h1 className="jb-texto__title text-section text-text">{post.title}</h1>
@@ -135,13 +135,13 @@ export default async function TextoPage({ params }: PageProps) {
           </div>
 
           <div className="jb-texto__invite">
-            <p className="text-subtitle text-text">{textos.invite.title}</p>
+            <p className="text-subtitle text-text">{artigos.invite.title}</p>
             <div className="jb-texto__invite-actions">
               <Link className="jb-btn" href="/#contato">
-                {textos.invite.cta}
+                {artigos.invite.cta}
               </Link>
-              <Link href="/textos" className="jb-link">
-                {textos.invite.viewOthers}
+              <Link href="/artigos" className="jb-link">
+                {artigos.invite.viewOthers}
               </Link>
             </div>
           </div>

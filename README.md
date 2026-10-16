@@ -13,5 +13,5 @@ Neste GitHub, compartilho projetos e experimentos sobre tecnologia e produto.
 - [Site](https://joaobaran.com)
 - [LinkedIn](https://www.linkedin.com/in/joaovictorbaran/)
 - [X](https://x.com/joaovbaran)
-- [Textos](https://joaobaran.com/textos)
+- [Artigos](https://joaobaran.com/artigos)
 - [Conversa no podcast Sem Codar](https://youtube.com/playlist?list=PL25tm4Xi9g3ygCnQjSm0qCBgpSvl6RHSL)
