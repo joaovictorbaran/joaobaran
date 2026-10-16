@@ -1318,8 +1318,8 @@ html.jb-js.jb-js-played .jb-hero__cta {
 
   .jb-experience__timeline {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 32px;
+    grid-template-columns: 0.9fr 1.15fr 1.1fr 0.85fr 1.3fr;
+    gap: 16px;
     margin-top: 32px;
     padding-left: 0;
     padding-top: 28px;
@@ -1337,6 +1337,11 @@ html.jb-js.jb-js-played .jb-hero__cta {
   .jb-experience__milestone-dot {
     left: 0;
     top: -28px;
+  }
+
+  .jb-experience__milestone-text {
+    max-width: none;
+    font-size: 14px;
   }
 
   .jb-experience__closing {

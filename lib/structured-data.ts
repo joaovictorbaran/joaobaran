@@ -14,6 +14,7 @@ export function getPersonJsonLd() {
     worksFor: {
       "@type": "Organization",
       name: status.company,
+      url: status.url,
     },
     // Só os canais com URL real (ver BAR-21): um canal ainda pendente ficaria com href "#".
     sameAs: channels.map((channel) => channel.href).filter((href) => href.startsWith("http")),
