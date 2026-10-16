@@ -14,19 +14,17 @@ export const hero = {
 };
 
 export const status = {
-  role: "CTO",
-  company: "Parcela Mais",
-  currentLine:
-    "Construí o sistema da Parcela Mais, fintech de saúde que ajuda clínicas de todo o Brasil a oferecer tratamento parcelado.",
-  currentMilestone: {
-    year: "2024",
-    text: "CTO. Liderei um time de 8 pessoas, com processos de desenvolvimento apoiados por IA.",
-  },
+  role: "Fundador",
+  company: "Baran Tecnologia",
+  url: "https://barantecnologia.com.br",
 };
 
 export const experience = {
-  title: "De desenvolvedor a CTO na mesma empresa.",
-  impactLabel: "Parcela Mais em números",
+  title: "Uma história contada por números.",
+  // Linha de apoio abaixo do título da seção.
+  currentLine:
+    "Construí o sistema da Parcela Mais, fintech de saúde que ajuda clínicas de todo o Brasil a oferecer tratamento parcelado.",
+  impactLabel: "Parcela Mais · dados de outubro de 2026",
   impact: [
     { value: "7 mil", label: "clínicas atendidas" },
     { value: "R$100 milhões", label: "transacionados" },
@@ -73,6 +71,11 @@ export const experience = {
     { year: "Aos 16", text: "Aprendi a programar na escola pública." },
     { year: "2021", text: "Desenvolvedor. Entrei para construir o primeiro produto da empresa." },
     { year: "2023", text: "Tech Lead. Assumi a evolução técnica da plataforma." },
+    { year: "2024", text: "CTO. Liderei um time de 8 pessoas, com processos de desenvolvimento apoiados por IA." },
+    {
+      year: "2026",
+      text: "Fundei a Baran Tecnologia, software house boutique. Faço software sob medida, do problema de negócio ao sistema em produção.",
+    },
   ],
   closing: "Meu trabalho é achar o problema que vale resolver e colocar a solução no ar.",
   cv: "Ver CV",
@@ -154,7 +157,7 @@ export const footer = {
   // WhatsApp sem mensagem pronta (a mensagem fica no botão da dobra azul).
   whatsappHref: "https://wa.me/5548936184688",
   baran: {
-    text: "Também faço software sob medida na",
+    text: "Desenvolvido pela",
     link: "Baran Tecnologia",
     href: "https://barantecnologia.com.br",
   },

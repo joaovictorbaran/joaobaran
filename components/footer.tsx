@@ -68,7 +68,7 @@ export function Footer() {
               {footer.baran.link}
             </a>
           </p>
-          <span>{new Date().getFullYear()}</span>
+          <span>© {new Date().getFullYear()} João Baran</span>
         </div>
       </div>
     </footer>

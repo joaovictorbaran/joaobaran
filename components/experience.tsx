@@ -1,4 +1,4 @@
-import { experience, status } from "@/content/site";
+import { experience } from "@/content/site";
 import { Reveal } from "./reveal";
 import { DiagCobranca } from "./diagrams/diag-cobranca";
 import { DiagCredito } from "./diagrams/diag-credito";
@@ -8,10 +8,7 @@ import { DiagMigracao } from "./diagrams/diag-migracao";
 
 const DIAGRAMS = [DiagCobranca, DiagCredito, DiagIntegracoes, DiagIA, DiagMigracao];
 
-const MILESTONES = [
-  ...experience.milestones,
-  { year: status.currentMilestone.year, text: status.currentMilestone.text },
-];
+const MILESTONES = experience.milestones;
 
 export function Experience() {
   return (
@@ -19,7 +16,7 @@ export function Experience() {
       <div className="jb-container">
         <Reveal>
           <h2 className="text-section text-text">{experience.title}</h2>
-          <p className="jb-experience__lead text-body text-text-2">{status.currentLine}</p>
+          <p className="jb-experience__lead text-body text-text-2">{experience.currentLine}</p>
         </Reveal>
 
         <Reveal>
