@@ -8,6 +8,8 @@ export type Post = {
   summary: string;
   featured: boolean;
   draft: boolean;
+  /** Caminho público da capa (ex.: "/posts/<slug>/capa.jpg"), quando o texto tem uma. */
+  cover?: string;
   content: string;
   readingTime: number;
 };
@@ -75,12 +77,19 @@ export function parseFrontmatter(fileName: string, raw: string) {
     throw new Error(`content/posts/${fileName}: campo "draft" precisa ser true ou false.`);
   }
 
+  // Campo opcional. As imagens de cada texto ficam em public/posts/<slug>/ (decisão 001).
+  const cover = fields.cover === undefined ? undefined : stripQuotes(fields.cover);
+  if (cover !== undefined && !cover.startsWith("/posts/")) {
+    throw new Error(`content/posts/${fileName}: campo "cover" precisa começar com "/posts/": "${cover}".`);
+  }
+
   return {
     title,
     date: dateRaw,
     summary,
     featured: fields.featured === "true",
     draft: fields.draft === "true",
+    ...(cover !== undefined && { cover }),
     content: body.trim(),
   };
 }

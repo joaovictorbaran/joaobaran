@@ -1072,6 +1072,15 @@ html.jb-js.jb-js-played .jb-hero__cta {
   margin-top: 14px;
 }
 
+.jb-texto__cover {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 32px;
+  border-radius: 16px;
+  background: var(--color-bg);
+}
+
 .jb-prose {
   margin-top: 36px;
 }

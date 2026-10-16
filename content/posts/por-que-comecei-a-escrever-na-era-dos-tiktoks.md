@@ -4,6 +4,7 @@ date: 2026-01-18
 summary: "Por que decidi escrever com mais profundidade num momento de TikTok e conteúdo genérico gerado por IA."
 featured: true
 draft: false
+cover: "/posts/por-que-comecei-a-escrever-na-era-dos-tiktoks/capa.jpg"
 ---
 
 Era uma quarta-feira, um dia como outro qualquer. Acordei cedo e logo comecei minha primeira reunião. Aproveitando a beleza do home office, tomei café enquanto participava da videochamada. Uma reunião se emendou com outra, e com outra. Logo chegou o almoço. Durante a refeição, uma série da Netflix para "fazer um barulho". Um breve scroll no Instagram e já era hora de voltar ao trabalho. Entre demandas e ligações, um podcast para acompanhar o trabalho com algumas planilhas. Assim chegou o final da tarde. Um café e mais alguns e-mails para responder. Opa, chegaram alguns pagamentos para autorizar. Deu de trabalho. Um banho e deitar na cama com minha noiva. Algum tempo no feed do TikTok até ficar sonolento e dormir.

@@ -107,6 +107,16 @@ describe("parseFrontmatter", () => {
     },
   );
 
+  it("lê a capa opcional", () => {
+    const withCover = VALID_FRONTMATTER.replace("draft: false", 'draft: false\ncover: "/posts/meu-texto/capa.jpg"');
+    expect(parseFrontmatter("com-capa.md", withCover).cover).toBe("/posts/meu-texto/capa.jpg");
+  });
+
+  it("lança um erro claro quando a capa não está em /posts/", () => {
+    const invalidCover = VALID_FRONTMATTER.replace("draft: false", "draft: false\ncover: assets/capa.jpg");
+    expect(() => parseFrontmatter("capa-invalida.md", invalidCover)).toThrow(/campo "cover" precisa começar com "\/posts\/"/);
+  });
+
   it("lança um erro claro quando a data é inválida", () => {
     const invalidDate = VALID_FRONTMATTER.replace("date: 2026-01-15", "date: não é uma data");
     expect(() => parseFrontmatter("data-invalida.md", invalidDate)).toThrow(/campo "date" inválido/);

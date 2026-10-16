@@ -4,6 +4,7 @@ date: 2026-01-25
 summary: "Por que Bubble e Vibe Coding não deveriam ser vistos como concorrentes, e sim como ferramentas complementares."
 featured: true
 draft: false
+cover: "/posts/no-code-vs-vibe-coding/capa.jpg"
 ---
 
 Esses dias me deparei com um tópico na Comunidade Sem Codar com o mesmo título desta seção do texto que vos escrevo: O Bubble ainda é viável?

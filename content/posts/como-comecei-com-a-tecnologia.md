@@ -4,6 +4,7 @@ date: 2022-08-18
 summary: "Minha trajetória até o desenvolvimento e o que aprendi sobre estudar programação."
 featured: true
 draft: false
+cover: "/posts/como-comecei-com-a-tecnologia/capa.png"
 ---
 
 ## [**João Victor Baran**](https://www.linkedin.com/in/joaovictorbaran/)
