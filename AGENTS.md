@@ -24,6 +24,7 @@ A `main` é produção: o Vercel publica automaticamente a cada merge, e cada PR
 - **Stack:** Next.js (App Router) + TypeScript, Tailwind CSS v4, Motion para animações, Vitest para testes, pnpm.
 - **Comandos:** `pnpm dev`, `pnpm lint`, `pnpm typecheck`, `pnpm test`, `pnpm build`.
 - **Conteúdo:** tudo em português (pt-BR). Home (menu, hero, Experiência, Textos, Canais, Contato, rodapé), blog em `/textos` e `/textos/[slug]` (Markdown em `content/posts/*.md`, ver `docs/decisions/001-content-in-markdown.md`), página 404 e redirecionamento de `/cv`.
+- **Imagens dos textos:** tudo em `public/posts/<slug>/`. A capa é `capa.jpg` ou `capa.png`, ligada pelo campo `cover` do cabeçalho; as instruções para gerar capas estão em `docs/capas/`.
 - **Não publique nada sobre o piloto da Baran Obra** neste site, nem em textos, cases ou exemplos.
 - **Estilo visual:** sensação de site da Apple — muito espaço em branco, tipografia forte, poucos elementos. Inter como fonte única, paleta em tons de cinza e um azul de destaque (com variações de brilho na identidade "Construindo o Futuro", ver `docs/decisions/002-animated-hero-background.md`). Não adicione cores, sombras ou animações que não estejam no sistema existente.
 - **Textos do João:** não reescreva, resuma nem "melhore" textos autorais (posts) a menos que a issue peça. Correções de digitação, sim; mudança de voz, não.
