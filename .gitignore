@@ -16,3 +16,6 @@ next-env.d.ts
 
 # rascunhos locais
 drafts/
+
+# configuração e worktrees locais do Claude Code
+.claude/
