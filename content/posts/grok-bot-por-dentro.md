@@ -88,7 +88,7 @@ O Grok Bot não inventou agentes. Ele empacotou bem o que já existia: um loop d
 
 A tendência que fica é esta: **IA primeiro, interface como porta**. O agente existe independente do app, e desktop, celular e X são só entradas. É a mesma tese que venho aplicando nos produtos da Baran Tecnologia, com o WhatsApp como porta principal.
 
-Comecei hoje um teste de uma semana com um Bot só, focado em conteúdo no X: identificar temas em alta, sugerir pautas e escrever rascunhos no meu tom. Nada é publicado sem a minha aprovação. No próximo texto, conto o que funcionou, o que quebrou e se ele entrou de vez no meu fluxo.
+Já comecei a testar. Estou montando vários Bots, cada um com uma função diferente, para descobrir onde um agente sempre ligado realmente tira trabalho das minhas costas e onde ele só cria mais coisa para eu revisar. No próximo texto, conto quais Bots sobreviveram, o que quebrou e se o Grok Bot entrou de vez no meu fluxo.
 
 Se você já está usando algum desses agentes, me conta qual escolheu e por quê. Vou gostar de comparar.
 
