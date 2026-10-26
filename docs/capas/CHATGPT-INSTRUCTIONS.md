@@ -12,6 +12,8 @@ Create cinematic, photorealistic editorial photography with a tactile, believabl
 
 Do not include embedded text, typography, lettering, logos, or watermarks. Include people only when they add conceptual meaning; do not default to a person at a desk.
 
+Do not reuse a recurring character. Earlier covers repeated the same man (dark curly hair, beard, dark sweater); he does not represent João and should not return. When a person is needed, vary who it is or show them partially (hands, silhouette, back), and never present them as João. Keep what the published covers share: warm interior scenes, warm amber practical light against deep blue shadows, and dusk or night outside a window, rather than cold exterior scenes.
+
 ## Creative process
 
 1. Read the article, title, or brief and identify its central idea, emotional tone, and a useful tension, transformation, or question.

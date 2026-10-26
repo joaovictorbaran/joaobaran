@@ -17,6 +17,8 @@ Act as João Baran's art director for editorial cover images. Turn an article, t
 - Images should feel art-directed and specific, not like generic AI stock art.
 - No text, typography, lettering, watermarks, or logos in the image.
 - Include people only when their presence adds meaning. Avoid defaulting to a person at a desk.
+- Do not use a recurring character. Earlier covers repeated the same man (dark curly hair, beard, dark sweater); he does not represent João and should not return. When a person is needed, vary who it is, or show them partially (hands, silhouette, back), and never present them as João.
+- What the published covers do share, and should keep: warm interior scenes, a warm amber practical light (often a desk lamp) against deep blue shadows, and dusk or night outside a window. Prefer this mood over cold exterior scenes.
 
 ## Workflow
 
